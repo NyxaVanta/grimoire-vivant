@@ -23,9 +23,7 @@
     --parchemin-fonce: #a89880;
     --blanc-os: #ede5d8;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     background: var(--noir-profond);
     color: var(--parchemin);
@@ -34,7 +32,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
   body::before {
     content: '';
     position: fixed;
@@ -46,10 +43,7 @@
     pointer-events: none;
     z-index: 0;
   }
-
   .app { position: relative; z-index: 1; display: flex; min-height: 100vh; }
-
-  /* SIDEBAR */
   .sidebar {
     width: 260px;
     min-height: 100vh;
@@ -62,628 +56,139 @@
     z-index: 100;
     overflow-y: auto;
   }
-
   .logo {
     padding: 2rem 1.5rem;
     border-bottom: 1px solid rgba(107,26,42,0.3);
     text-align: center;
   }
-
-  .logo-symbol {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--bordeaux-lumineux);
-    filter: drop-shadow(0 0 8px rgba(107,26,42,0.6));
-  }
-
-  .logo h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    color: var(--or);
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-
-  .logo p {
-    font-size: 0.7rem;
-    color: var(--fumee);
-    letter-spacing: 0.15em;
-    margin-top: 0.25rem;
-    font-style: italic;
-  }
-
+  .logo-symbol { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; color: var(--bordeaux-lumineux); filter: drop-shadow(0 0 8px rgba(107,26,42,0.6)); }
+  .logo h1 { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.25em; color: var(--or); text-transform: uppercase; font-weight: 400; }
+  .logo p { font-size: 0.7rem; color: var(--fumee); letter-spacing: 0.15em; margin-top: 0.25rem; font-style: italic; }
   nav { padding: 1.5rem 0; flex: 1; }
-
-  .nav-section {
-    padding: 0.25rem 1.5rem 0.75rem;
-    font-family: 'Cinzel', serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    color: var(--fumee);
-    text-transform: uppercase;
-  }
-
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 1.5rem;
-    cursor: pointer;
-    color: var(--parchemin-fonce);
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    border-left: 2px solid transparent;
-  }
-
-  .nav-item:hover {
-    color: var(--or-pale);
-    background: rgba(107,26,42,0.15);
-    border-left-color: rgba(107,26,42,0.5);
-  }
-
-  .nav-item.active {
-    color: var(--or);
-    background: rgba(107,26,42,0.2);
-    border-left-color: var(--bordeaux-lumineux);
-  }
-
+  .nav-section { padding: 0.25rem 1.5rem 0.75rem; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--fumee); text-transform: uppercase; }
+  .nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 1.5rem; cursor: pointer; color: var(--parchemin-fonce); font-size: 0.9rem; letter-spacing: 0.05em; transition: all 0.2s; border-left: 2px solid transparent; }
+  .nav-item:hover { color: var(--or-pale); background: rgba(107,26,42,0.15); border-left-color: rgba(107,26,42,0.5); }
+  .nav-item.active { color: var(--or); background: rgba(107,26,42,0.2); border-left-color: var(--bordeaux-lumineux); }
   .nav-icon { font-size: 1rem; opacity: 0.8; }
-
-  .cosmic-bar {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid rgba(107,26,42,0.3);
-    background: rgba(5,4,3,0.5);
-  }
-
-  .cosmic-bar h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    color: var(--fumee);
-    margin-bottom: 0.75rem;
-    text-transform: uppercase;
-  }
-
+  .cosmic-bar { padding: 1rem 1.5rem; border-top: 1px solid rgba(107,26,42,0.3); background: rgba(5,4,3,0.5); }
+  .cosmic-bar h3 { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em; color: var(--fumee); margin-bottom: 0.75rem; text-transform: uppercase; }
   .cosmic-items { display: flex; flex-direction: column; gap: 0.4rem; }
-
-  .cosmic-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.78rem;
-  }
-
+  .cosmic-item { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; }
   .cosmic-label { color: var(--fumee); }
   .cosmic-value { color: var(--or); font-weight: 300; letter-spacing: 0.05em; }
-
-  /* MAIN */
-  .main {
-    margin-left: 260px;
-    flex: 1;
-    min-height: 100vh;
-    padding: 2rem 2.5rem;
-  }
-
+  .main { margin-left: 260px; flex: 1; min-height: 100vh; padding: 2rem 2.5rem; }
   .page { display: none; }
   .page.active { display: block; }
-
-  .page-header {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(107,26,42,0.25);
-  }
-
-  .page-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    color: var(--or);
-    font-weight: 400;
-    letter-spacing: 0.1em;
-  }
-
-  .page-subtitle {
-    color: var(--fumee);
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-    letter-spacing: 0.05em;
-  }
-
-  /* CARDS INVENTAIRE */
-  .filter-bar {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .filter-btn {
-    background: none;
-    border: 1px solid rgba(107,26,42,0.4);
-    color: var(--parchemin-fonce);
-    padding: 0.35rem 1rem;
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-transform: uppercase;
-  }
-
-  .filter-btn:hover, .filter-btn.active {
-    background: rgba(107,26,42,0.3);
-    border-color: var(--bordeaux-lumineux);
-    color: var(--or);
-  }
-
-  .search-input {
-    background: rgba(42,36,32,0.5);
-    border: 1px solid rgba(107,26,42,0.3);
-    color: var(--parchemin);
-    padding: 0.4rem 1rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    flex: 1;
-    min-width: 200px;
-    outline: none;
-  }
-
+  .page-header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(107,26,42,0.25); }
+  .page-title { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--or); font-weight: 400; letter-spacing: 0.1em; }
+  .page-subtitle { color: var(--fumee); font-style: italic; font-size: 0.9rem; margin-top: 0.25rem; letter-spacing: 0.05em; }
+  .filter-bar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .filter-btn { background: none; border: 1px solid rgba(107,26,42,0.4); color: var(--parchemin-fonce); padding: 0.35rem 1rem; font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.1em; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+  .filter-btn:hover, .filter-btn.active { background: rgba(107,26,42,0.3); border-color: var(--bordeaux-lumineux); color: var(--or); }
+  .search-input { background: rgba(42,36,32,0.5); border: 1px solid rgba(107,26,42,0.3); color: var(--parchemin); padding: 0.4rem 1rem; font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; flex: 1; min-width: 200px; outline: none; }
   .search-input:focus { border-color: var(--bordeaux-lumineux); }
   .search-input::placeholder { color: var(--fumee); font-style: italic; }
-
-  .inventory-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
-  }
-
-  .item-card {
-    background: rgba(42,36,32,0.4);
-    border: 1px solid rgba(107,26,42,0.2);
-    padding: 1rem;
-    cursor: pointer;
-    transition: all 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .item-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--bordeaux), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .item-card:hover {
-    border-color: rgba(107,26,42,0.6);
-    background: rgba(61,53,48,0.5);
-    transform: translateY(-2px);
-  }
-
+  .inventory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+  .item-card { background: rgba(42,36,32,0.4); border: 1px solid rgba(107,26,42,0.2); padding: 1rem; cursor: pointer; transition: all 0.25s; position: relative; overflow: hidden; }
+  .item-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--bordeaux), transparent); opacity: 0; transition: opacity 0.3s; }
+  .item-card:hover { border-color: rgba(107,26,42,0.6); background: rgba(61,53,48,0.5); transform: translateY(-2px); }
   .item-card:hover::before { opacity: 1; }
-
   .item-emoji { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
-
-  .item-name {
-    font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    color: var(--or-pale);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
-  }
-
-  .item-category {
-    font-size: 0.7rem;
-    color: var(--fumee);
-    font-style: italic;
-  }
-
-  .item-qty {
-    position: absolute;
-    top: 0.5rem; right: 0.75rem;
-    font-size: 0.7rem;
-    color: var(--cuivre);
-    font-family: 'Cinzel', serif;
-  }
-
+  .item-name { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--or-pale); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+  .item-category { font-size: 0.7rem; color: var(--fumee); font-style: italic; }
+  .item-qty { position: absolute; top: 0.5rem; right: 0.75rem; font-size: 0.7rem; color: var(--cuivre); font-family: 'Cinzel', serif; }
   .item-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.5rem; }
-
-  .item-tag {
-    font-size: 0.6rem;
-    padding: 0.15rem 0.4rem;
-    border: 1px solid rgba(107,26,42,0.35);
-    color: var(--bordeaux-lumineux);
-    letter-spacing: 0.05em;
-    font-family: 'Cinzel', serif;
-  }
-
-  /* RITUELS */
+  .item-tag { font-size: 0.6rem; padding: 0.15rem 0.4rem; border: 1px solid rgba(107,26,42,0.35); color: var(--bordeaux-lumineux); letter-spacing: 0.05em; font-family: 'Cinzel', serif; }
+  .card-actions { display: flex; gap: 0.4rem; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid rgba(107,26,42,0.15); }
+  .btn-action { background: none; border: 1px solid rgba(107,26,42,0.3); color: var(--fumee); padding: 0.25rem 0.6rem; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+  .btn-action:hover { border-color: var(--bordeaux-lumineux); color: var(--or-pale); }
+  .btn-action.danger:hover { border-color: #8b2535; color: #c0506a; }
   .rituals-list { display: flex; flex-direction: column; gap: 1rem; }
-
-  .ritual-card {
-    background: rgba(42,36,32,0.4);
-    border: 1px solid rgba(107,26,42,0.25);
-    padding: 1.25rem 1.5rem;
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-
-  .ritual-card:hover {
-    border-color: rgba(107,26,42,0.6);
-    background: rgba(61,53,48,0.5);
-  }
-
+  .ritual-card { background: rgba(42,36,32,0.4); border: 1px solid rgba(107,26,42,0.25); padding: 1.25rem 1.5rem; transition: all 0.25s; }
+  .ritual-card:hover { border-color: rgba(107,26,42,0.6); background: rgba(61,53,48,0.5); }
   .ritual-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
-
-  .ritual-name {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: var(--or);
-    letter-spacing: 0.08em;
-  }
-
-  .ritual-intent {
-    font-style: italic;
-    color: var(--parchemin-fonce);
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
-  }
-
+  .ritual-header-left { flex: 1; cursor: pointer; }
+  .ritual-name { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--or); letter-spacing: 0.08em; }
+  .ritual-intent { font-style: italic; color: var(--parchemin-fonce); font-size: 0.85rem; margin-top: 0.25rem; }
   .ritual-meta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem; }
-
-  .meta-badge {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid rgba(107,26,42,0.4);
-    color: var(--parchemin-fonce);
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
+  .meta-badge { font-size: 0.65rem; padding: 0.2rem 0.6rem; border: 1px solid rgba(107,26,42,0.4); color: var(--parchemin-fonce); font-family: 'Cinzel', serif; letter-spacing: 0.08em; text-transform: uppercase; }
   .meta-badge.lune { border-color: rgba(200,180,140,0.3); color: var(--or-pale); }
   .meta-badge.planete { border-color: rgba(184,115,51,0.4); color: var(--cuivre-clair); }
-
   .doable-yes { color: #6a9e5a; }
   .doable-partial { color: var(--or); }
   .doable-no { color: var(--bordeaux-lumineux); }
-
-  .ritual-ingredients {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(107,26,42,0.2);
-    display: none;
-  }
-
+  .ritual-ingredients { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(107,26,42,0.2); display: none; }
   .ritual-card.open .ritual-ingredients { display: block; }
-
-  .ritual-ingredients h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--fumee);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
+  .ritual-ingredients h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--fumee); text-transform: uppercase; margin-bottom: 0.5rem; }
   .ingredient-list { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-
-  .ingredient-chip {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    background: rgba(107,26,42,0.15);
-    border: 1px solid rgba(107,26,42,0.3);
-    color: var(--parchemin-fonce);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .ingredient-chip:hover {
-    background: rgba(107,26,42,0.3);
-    color: var(--or-pale);
-  }
-
-  .ingredient-chip.manquant {
-    opacity: 0.4;
-    border-style: dashed;
-  }
-
-  /* TIMING COSMIQUE */
-  .timing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .timing-card {
-    background: rgba(42,36,32,0.4);
-    border: 1px solid rgba(107,26,42,0.25);
-    padding: 1.25rem;
-  }
-
-  .timing-card h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    color: var(--fumee);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  .timing-current {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
+  .ingredient-chip { font-size: 0.75rem; padding: 0.2rem 0.6rem; background: rgba(107,26,42,0.15); border: 1px solid rgba(107,26,42,0.3); color: var(--parchemin-fonce); }
+  .ingredient-chip.manquant { opacity: 0.4; border-style: dashed; }
+  .ritual-actions { display: flex; gap: 0.4rem; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(107,26,42,0.15); }
+  .timing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+  .timing-card { background: rgba(42,36,32,0.4); border: 1px solid rgba(107,26,42,0.25); padding: 1.25rem; }
+  .timing-card h3 { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.15em; color: var(--fumee); text-transform: uppercase; margin-bottom: 1rem; }
+  .timing-current { display: flex; align-items: center; gap: 1rem; }
   .timing-symbol { font-size: 2.5rem; }
-
-  .timing-info h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: var(--or);
-    font-weight: 400;
-  }
-
-  .timing-info p {
-    font-size: 0.8rem;
-    color: var(--parchemin-fonce);
-    font-style: italic;
-    margin-top: 0.15rem;
-  }
-
+  .timing-info h4 { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--or); font-weight: 400; }
+  .timing-info p { font-size: 0.8rem; color: var(--parchemin-fonce); font-style: italic; margin-top: 0.15rem; }
   .moon-phases { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
-
-  .phase-item {
-    text-align: center;
-    flex: 1;
-    min-width: 50px;
-    padding: 0.5rem 0.25rem;
-    border: 1px solid transparent;
-    cursor: default;
-    font-size: 0.7rem;
-  }
-
+  .phase-item { text-align: center; flex: 1; min-width: 50px; padding: 0.5rem 0.25rem; border: 1px solid transparent; font-size: 0.7rem; }
   .phase-item.current { border-color: rgba(107,26,42,0.5); background: rgba(107,26,42,0.15); }
   .phase-item span:first-child { display: block; font-size: 1.2rem; margin-bottom: 0.2rem; }
   .phase-item span:last-child { color: var(--fumee); }
   .phase-item.current span:last-child { color: var(--or); }
-
-  .planets-week {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-top: 0.5rem;
-  }
-
-  .planet-day {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid rgba(107,26,42,0.1);
-    font-size: 0.8rem;
-  }
-
+  .planets-week { display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.5rem; }
+  .planet-day { display: flex; justify-content: space-between; align-items: center; padding: 0.3rem 0; border-bottom: 1px solid rgba(107,26,42,0.1); font-size: 0.8rem; }
   .planet-day.today { color: var(--or); }
   .planet-day.today .planet-name { color: var(--or); font-weight: 600; }
-
   .planet-name { font-style: italic; color: var(--parchemin-fonce); }
   .planet-energy { color: var(--fumee); font-size: 0.7rem; }
-
-  /* AJOUTER */
-  .form-section {
-    max-width: 600px;
-  }
-
+  .form-section { max-width: 600px; }
   .form-group { margin-bottom: 1.25rem; }
-
-  .form-label {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--fumee);
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-
-  .form-input, .form-select, .form-textarea {
-    width: 100%;
-    background: rgba(42,36,32,0.6);
-    border: 1px solid rgba(107,26,42,0.3);
-    color: var(--parchemin);
-    padding: 0.6rem 0.9rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-input:focus, .form-select:focus, .form-textarea:focus {
-    border-color: var(--bordeaux-lumineux);
-  }
-
+  .form-label { display: block; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--fumee); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .form-input, .form-select, .form-textarea { width: 100%; background: rgba(42,36,32,0.6); border: 1px solid rgba(107,26,42,0.3); color: var(--parchemin); padding: 0.6rem 0.9rem; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--bordeaux-lumineux); }
   .form-select option { background: var(--cendre); }
-
   .form-textarea { min-height: 100px; resize: vertical; }
-
   .tags-input { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
-
-  .tag-input-item {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    background: rgba(107,26,42,0.2);
-    border: 1px solid rgba(107,26,42,0.4);
-    padding: 0.2rem 0.5rem;
-    font-size: 0.75rem;
-    color: var(--bordeaux-lumineux);
-  }
-
-  .tag-remove {
-    cursor: pointer;
-    color: var(--fumee);
-    font-size: 0.7rem;
-    background: none;
-    border: none;
-    color: var(--fumee);
-    padding: 0;
-    line-height: 1;
-  }
-
+  .tag-input-item { display: flex; align-items: center; gap: 0.3rem; background: rgba(107,26,42,0.2); border: 1px solid rgba(107,26,42,0.4); padding: 0.2rem 0.5rem; font-size: 0.75rem; color: var(--bordeaux-lumineux); }
+  .tag-remove { cursor: pointer; background: none; border: none; color: var(--fumee); padding: 0; line-height: 1; font-size: 0.7rem; }
   .tag-remove:hover { color: var(--bordeaux-lumineux); }
-
-  .btn-primary {
-    background: rgba(107,26,42,0.4);
-    border: 1px solid var(--bordeaux);
-    color: var(--or-pale);
-    padding: 0.7rem 2rem;
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-
-  .btn-primary:hover {
-    background: rgba(107,26,42,0.7);
-    color: var(--or);
-  }
-
-  /* MODAL */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(5,4,3,0.85);
-    z-index: 500;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
+  .btn-primary { background: rgba(107,26,42,0.4); border: 1px solid var(--bordeaux); color: var(--or-pale); padding: 0.7rem 2rem; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; }
+  .btn-primary:hover { background: rgba(107,26,42,0.7); color: var(--or); }
+  .btn-danger { background: rgba(107,26,42,0.2); border: 1px solid rgba(139,37,53,0.5); color: #c0506a; padding: 0.7rem 1.5rem; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; margin-left: 0.75rem; }
+  .btn-danger:hover { background: rgba(107,26,42,0.5); }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(5,4,3,0.85); z-index: 500; display: none; align-items: center; justify-content: center; padding: 2rem; }
   .modal-overlay.open { display: flex; }
-
-  .modal {
-    background: var(--cendre);
-    border: 1px solid rgba(107,26,42,0.5);
-    max-width: 560px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 2rem;
-    position: relative;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 1rem; right: 1rem;
-    background: none;
-    border: none;
-    color: var(--fumee);
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-family: 'Cinzel', serif;
-  }
-
+  .modal { background: var(--cendre); border: 1px solid rgba(107,26,42,0.5); max-width: 560px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 2rem; position: relative; }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--fumee); font-size: 1.2rem; cursor: pointer; font-family: 'Cinzel', serif; }
   .modal-close:hover { color: var(--or); }
-
   .modal-symbol { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
-
-  .modal h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-    color: var(--or);
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-  }
-
-  .modal-category {
-    font-size: 0.8rem;
-    color: var(--bordeaux-lumineux);
-    font-style: italic;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.25rem;
-  }
-
+  .modal h2 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--or); letter-spacing: 0.1em; font-weight: 400; margin-bottom: 0.25rem; }
+  .modal-category { font-size: 0.8rem; color: var(--bordeaux-lumineux); font-style: italic; letter-spacing: 0.05em; margin-bottom: 1.25rem; }
   .modal-section { margin-bottom: 1.25rem; }
-
-  .modal-section h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--fumee);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .modal-section p {
-    color: var(--parchemin-fonce);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    font-style: italic;
-  }
-
+  .modal-section h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--fumee); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .modal-section p { color: var(--parchemin-fonce); font-size: 0.9rem; line-height: 1.6; font-style: italic; }
   .modal-section .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-
-  .modal-section .tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid rgba(107,26,42,0.4);
-    color: var(--parchemin-fonce);
-    font-family: 'Cinzel', serif;
-    letter-spacing: 0.05em;
-  }
-
-  /* TOAST */
-  .toast {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: var(--cendre);
-    border: 1px solid var(--bordeaux);
-    color: var(--or-pale);
-    padding: 0.75rem 1.25rem;
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    z-index: 999;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s;
-    pointer-events: none;
-  }
-
+  .modal-section .tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border: 1px solid rgba(107,26,42,0.4); color: var(--parchemin-fonce); font-family: 'Cinzel', serif; letter-spacing: 0.05em; }
+  .modal-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(107,26,42,0.2); }
+  .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--cendre); border: 1px solid var(--bordeaux); color: var(--or-pale); padding: 0.75rem 1.25rem; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.1em; z-index: 999; opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; }
   .toast.show { opacity: 1; transform: translateY(0); }
-
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--noir-profond); }
   ::-webkit-scrollbar-thumb { background: rgba(107,26,42,0.5); }
   ::-webkit-scrollbar-thumb:hover { background: var(--bordeaux); }
-
-  .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--fumee);
-    font-style: italic;
-  }
-
+  .empty-state { text-align: center; padding: 4rem 2rem; color: var(--fumee); font-style: italic; }
   .empty-state .symbol { font-size: 3rem; display: block; margin-bottom: 1rem; opacity: 0.4; }
+  .confirm-overlay { position: fixed; inset: 0; background: rgba(5,4,3,0.9); z-index: 600; display: none; align-items: center; justify-content: center; }
+  .confirm-overlay.open { display: flex; }
+  .confirm-box { background: var(--cendre); border: 1px solid rgba(139,37,53,0.6); padding: 2rem; max-width: 380px; width: 100%; text-align: center; }
+  .confirm-box p { color: var(--parchemin-fonce); font-style: italic; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+  .confirm-box h3 { font-family: 'Cinzel', serif; color: var(--or); font-size: 1rem; letter-spacing: 0.1em; font-weight: 400; margin-bottom: 0.75rem; }
+  .confirm-btns { display: flex; gap: 0.75rem; justify-content: center; }
 </style>
 </head>
 <body>
-
 <div class="app">
   <aside class="sidebar">
     <div class="logo">
@@ -693,31 +198,22 @@
     </div>
     <nav>
       <div class="nav-section">Navigation</div>
-      <div class="nav-item active" onclick="showPage('inventaire')">
-        <span class="nav-icon">◈</span> Inventaire
-      </div>
-      <div class="nav-item" onclick="showPage('rituels')">
-        <span class="nav-icon">◉</span> Rituels
-      </div>
-      <div class="nav-item" onclick="showPage('timing')">
-        <span class="nav-icon">◯</span> Timing Cosmique
-      </div>
+      <div class="nav-item active" onclick="showPage('inventaire')"><span class="nav-icon">◈</span> Inventaire</div>
+      <div class="nav-item" onclick="showPage('rituels')"><span class="nav-icon">◉</span> Rituels</div>
+      <div class="nav-item" onclick="showPage('timing')"><span class="nav-icon">◯</span> Timing Cosmique</div>
+      <div class="nav-item" onclick="showPage('bain-vaginal')"><span class="nav-icon">♀</span> Bain Vaginal</div>
       <div class="nav-section" style="margin-top:1rem;">Ajouter</div>
-      <div class="nav-item" onclick="showPage('ajouter-item')">
-        <span class="nav-icon">+</span> Nouvel ingrédient
-      </div>
-      <div class="nav-item" onclick="showPage('ajouter-rituel')">
-        <span class="nav-icon">+</span> Nouveau rituel
-      </div>
+      <div class="nav-item" onclick="showPage('ajouter-item')"><span class="nav-icon">+</span> Nouvel ingrédient</div>
+      <div class="nav-item" onclick="showPage('ajouter-rituel')"><span class="nav-icon">+</span> Nouveau rituel</div>
     </nav>
-    <div class="cosmic-bar" id="cosmic-bar">
+    <div class="cosmic-bar">
       <h3>Ce moment</h3>
       <div class="cosmic-items" id="cosmic-now"></div>
     </div>
   </aside>
 
   <main class="main">
-    <!-- PAGE INVENTAIRE -->
+    <!-- INVENTAIRE -->
     <div class="page active" id="page-inventaire">
       <div class="page-header">
         <h2 class="page-title">Inventaire</h2>
@@ -725,17 +221,17 @@
       </div>
       <div class="filter-bar">
         <input class="search-input" type="text" placeholder="Chercher un ingrédient..." id="search-inv" oninput="renderInventaire()">
-        <button class="filter-btn active" onclick="setFilter('all', this)">Tout</button>
-        <button class="filter-btn" onclick="setFilter('plante', this)">Plantes</button>
-        <button class="filter-btn" onclick="setFilter('huile', this)">Huiles</button>
-        <button class="filter-btn" onclick="setFilter('bougie', this)">Bougies</button>
-        <button class="filter-btn" onclick="setFilter('mineral', this)">Minéraux</button>
-        <button class="filter-btn" onclick="setFilter('autre', this)">Autres</button>
+        <button class="filter-btn active" onclick="setFilter('all',this)">Tout</button>
+        <button class="filter-btn" onclick="setFilter('plante',this)">Plantes</button>
+        <button class="filter-btn" onclick="setFilter('huile',this)">Huiles</button>
+        <button class="filter-btn" onclick="setFilter('bougie',this)">Bougies</button>
+        <button class="filter-btn" onclick="setFilter('mineral',this)">Minéraux</button>
+        <button class="filter-btn" onclick="setFilter('autre',this)">Autres</button>
       </div>
       <div class="inventory-grid" id="inventory-grid"></div>
     </div>
 
-    <!-- PAGE RITUELS -->
+    <!-- RITUELS -->
     <div class="page" id="page-rituels">
       <div class="page-header">
         <h2 class="page-title">Rituels</h2>
@@ -744,7 +240,7 @@
       <div class="rituals-list" id="rituals-list"></div>
     </div>
 
-    <!-- PAGE TIMING -->
+    <!-- TIMING -->
     <div class="page" id="page-timing">
       <div class="page-header">
         <h2 class="page-title">Timing Cosmique</h2>
@@ -752,20 +248,57 @@
       </div>
       <div class="timing-grid" id="timing-grid"></div>
       <div class="page-header" style="margin-top:2rem;">
-        <h3 style="font-family:'Cinzel',serif;color:var(--or);font-size:1.1rem;letter-spacing:0.1em;font-weight:400;">
-          Rituels conseillés maintenant
-        </h3>
+        <h3 style="font-family:'Cinzel',serif;color:var(--or);font-size:1.1rem;letter-spacing:0.1em;font-weight:400;">Rituels conseillés maintenant</h3>
       </div>
       <div id="rituels-conseilles" class="rituals-list"></div>
     </div>
 
-    <!-- PAGE AJOUTER ITEM -->
+    <!-- BAIN VAGINAL -->
+    <div class="page" id="page-bain-vaginal">
+      <div class="page-header">
+        <h2 class="page-title">Bain Vaginal</h2>
+        <p class="page-subtitle">Recette personnalisée selon ton cosmos intérieur et extérieur</p>
+      </div>
+      <div style="max-width:640px;">
+        <div class="timing-card" style="margin-bottom:1.5rem;" id="bv-cosmic-ctx"></div>
+        <div class="form-group">
+          <label class="form-label">Comment tu te sens aujourd'hui ?</label>
+          <textarea class="form-textarea" id="bv-besoin" placeholder="Ex : je me sens fatiguée et déconnectée de mon corps, j'ai besoin de douceur et de reconnexion à ma féminité... ou bien j'ai envie de purification profonde, il y a eu beaucoup de tensions cette semaine..." style="min-height:120px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Intention principale</label>
+          <select class="form-select" id="bv-intention">
+            <option value="purification">Purification & libération</option>
+            <option value="reconnexion">Reconnexion à ma féminité</option>
+            <option value="amour">Amour & self-love</option>
+            <option value="fertilite">Fertilité & cycles</option>
+            <option value="guerison">Guérison & douceur</option>
+            <option value="pouvoir">Pouvoir & magnétisme</option>
+            <option value="intuition">Intuition & vision</option>
+            <option value="ancrage">Ancrage & stabilité</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="genererBainVaginal()" id="bv-btn">Révéler ma recette</button>
+        <div id="bv-result" style="margin-top:2rem;display:none;">
+          <div style="border-top:1px solid rgba(107,26,42,0.3);padding-top:1.5rem;">
+            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.25em;color:var(--fumee);text-transform:uppercase;margin-bottom:1rem;">Ta recette du moment</div>
+            <div id="bv-content" style="color:var(--parchemin-fonce);font-size:0.95rem;line-height:1.8;font-style:italic;"></div>
+          </div>
+        </div>
+        <div id="bv-loading" style="display:none;margin-top:2rem;text-align:center;color:var(--fumee);font-style:italic;font-size:0.9rem;letter-spacing:0.1em;">
+          <span id="bv-loading-text">Le grimoire consulte les astres...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AJOUTER ITEM -->
     <div class="page" id="page-ajouter-item">
       <div class="page-header">
-        <h2 class="page-title">Nouvel ingrédient</h2>
-        <p class="page-subtitle">Ajouter à ton inventaire vivant</p>
+        <h2 class="page-title" id="form-item-title">Nouvel ingrédient</h2>
+        <p class="page-subtitle" id="form-item-subtitle">Ajouter à ton inventaire vivant</p>
       </div>
       <div class="form-section">
+        <input type="hidden" id="edit-item-id">
         <div class="form-group">
           <label class="form-label">Symbole (emoji)</label>
           <input class="form-input" type="text" id="new-emoji" placeholder="🌿" maxlength="2">
@@ -790,28 +323,32 @@
         </div>
         <div class="form-group">
           <label class="form-label">Propriétés (appuie Entrée pour ajouter)</label>
-          <input class="form-input" type="text" id="new-tag-input" placeholder="Protection, Amour, Purification..." onkeydown="addTag(event)">
+          <input class="form-input" type="text" id="new-tag-input" placeholder="Protection, Amour..." onkeydown="addTag(event)">
           <div class="tags-input" id="new-tags"></div>
         </div>
         <div class="form-group">
-          <label class="form-label">Correspondances (lune, planète, signe...)</label>
+          <label class="form-label">Correspondances</label>
           <input class="form-input" type="text" id="new-correspondances" placeholder="Lune croissante · Vénus · Balance">
         </div>
         <div class="form-group">
           <label class="form-label">Notes & vertus</label>
           <textarea class="form-textarea" id="new-notes" placeholder="Vertus, usages, intuitions..."></textarea>
         </div>
-        <button class="btn-primary" onclick="saveNewItem()">Inscrire dans le grimoire</button>
+        <div style="display:flex;gap:0.75rem;">
+          <button class="btn-primary" id="btn-save-item" onclick="saveItem()">Inscrire dans le grimoire</button>
+          <button class="btn-danger" id="btn-delete-item" style="display:none" onclick="confirmDeleteItem()">Supprimer</button>
+        </div>
       </div>
     </div>
 
-    <!-- PAGE AJOUTER RITUEL -->
+    <!-- AJOUTER RITUEL -->
     <div class="page" id="page-ajouter-rituel">
       <div class="page-header">
-        <h2 class="page-title">Nouveau rituel</h2>
+        <h2 class="page-title" id="form-rit-title">Nouveau rituel</h2>
         <p class="page-subtitle">Formaliser une pratique sacrée</p>
       </div>
       <div class="form-section">
+        <input type="hidden" id="edit-rit-id">
         <div class="form-group">
           <label class="form-label">Nom du rituel</label>
           <input class="form-input" type="text" id="new-rit-name" placeholder="Rituel de purification lunaire">
@@ -844,24 +381,43 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Ingrédients (noms séparés par virgule)</label>
+          <label class="form-label">Ingrédients (séparés par virgule)</label>
           <input class="form-input" type="text" id="new-rit-ingredients" placeholder="Lavande, Bougie blanche, Selenite...">
         </div>
         <div class="form-group">
           <label class="form-label">Étapes du rituel</label>
-          <textarea class="form-textarea" id="new-rit-steps" placeholder="1. Purifier l'espace avec de la sauge&#10;2. Allumer la bougie&#10;3..."></textarea>
+          <textarea class="form-textarea" id="new-rit-steps" placeholder="1. Purifier l'espace..."></textarea>
         </div>
-        <button class="btn-primary" onclick="saveNewRitual()">Sceller le rituel</button>
+        <div style="display:flex;gap:0.75rem;">
+          <button class="btn-primary" id="btn-save-rit" onclick="saveRitual()">Sceller le rituel</button>
+          <button class="btn-danger" id="btn-delete-rit" style="display:none" onclick="confirmDeleteRitual()">Supprimer</button>
+        </div>
       </div>
     </div>
   </main>
 </div>
 
-<!-- MODAL ITEM -->
+<!-- MODAL ITEM (lecture) -->
 <div class="modal-overlay" id="modal-item" onclick="closeModal('modal-item')">
-  <div class="modal" onclick="event.stopPropagation()" id="modal-item-content">
+  <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal('modal-item')">✕</button>
     <div id="modal-item-body"></div>
+    <div class="modal-actions">
+      <button class="btn-primary" id="modal-edit-btn" onclick="">Modifier</button>
+      <button class="btn-danger" id="modal-delete-btn" onclick="">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM DELETE -->
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-box">
+    <h3 id="confirm-title">Supprimer ?</h3>
+    <p id="confirm-msg">Cette action est irréversible.</p>
+    <div class="confirm-btns">
+      <button class="btn-danger" id="confirm-yes" onclick="">Supprimer</button>
+      <button class="btn-primary" onclick="closeConfirm()">Annuler</button>
+    </div>
   </div>
 </div>
 
@@ -869,192 +425,67 @@
 
 <script>
 // ============================================================
-// DONNÉES
+// DONNÉES PAR DÉFAUT
 // ============================================================
-
 const DEFAULT_INVENTORY = [
-  // PLANTES & HERBES
-  { id:'p1', emoji:'🌿', name:'Sauge blanche', category:'plante', qty:'Grande quantité', tags:['Purification','Protection','Clarté'], correspondances:'Lune croissante · Jupiter · Sagittaire', notes:'Usage principal : fumigation, purification de lieux et d\'objets. Puissante avant tout rituel.' },
-  { id:'p2', emoji:'🌸', name:'Lavande vraie', category:'plante', qty:'Séchée', tags:['Paix','Amour','Sommeil','Purification'], correspondances:'Mercure · Vénus · Gémeaux · Vierge', notes:'Apaisante, protectrice. Excellent pour rituels de paix intérieure et d\'amour propre.' },
-  { id:'p3', emoji:'🌼', name:'Camomille', category:'plante', qty:'En vrac', tags:['Paix','Chance','Purification','Argent'], correspondances:'Soleil · Lion · Bélier', notes:'Attire la chance et la prospérité. Calme les esprits agités.' },
-  { id:'p4', emoji:'🌹', name:'Roses séchées', category:'plante', qty:'Pétales', tags:['Amour','Beauté','Désir','Féminité'], correspondances:'Vénus · Taureau · Balance', notes:'Symbole universel de l\'amour. Rituels d\'attraction et de self-love.' },
-  { id:'p5', emoji:'🍃', name:'Menthe poivrée', category:'plante', qty:'Fraîche & séchée', tags:['Protection','Purification','Voyage'], correspondances:'Mercure · Vierge · Gémeaux', notes:'Énergie de clarté mentale et de purification. Active les chakras supérieurs.' },
-  { id:'p6', emoji:'🌾', name:'Romarin', category:'plante', qty:'Branches séchées', tags:['Protection','Mémoire','Purification','Fidélité'], correspondances:'Soleil · Mars · Lion · Bélier', notes:'Protège les espaces et favorise la mémoire. Excellent substitut de sauge.' },
-  { id:'p7', emoji:'🍂', name:'Cannelle', category:'plante', qty:'Bâtons & poudre', tags:['Succès','Argent','Amour','Protection'], correspondances:'Soleil · Mars · Bélier · Lion', notes:'Puissant amplificateur d\'intentions. Active la circulation d\'énergie et d\'argent.' },
-  { id:'p8', emoji:'🌱', name:'Basilic', category:'plante', qty:'En pot & séché', tags:['Amour','Protection','Prospérité'], correspondances:'Mars · Scorpion · Bélier', notes:'Symbole de protection et d\'abondance dans de nombreuses traditions.' },
-  { id:'p9', emoji:'🌺', name:'Hibiscus', category:'plante', qty:'Fleurs séchées', tags:['Amour','Désir','Divination'], correspondances:'Vénus · Scorpion', notes:'Richement lié aux rituels d\'amour passionnel et de désir.' },
-  { id:'p10', emoji:'🌿', name:'Hysope', category:'plante', qty:'Séchée', tags:['Purification','Protection','Pardon'], correspondances:'Jupiter · Sagittaire', notes:'Herbe sacrée biblique. Purification profonde, libération des charges karmiques.' },
-  { id:'p11', emoji:'🍋', name:'Zeste de citron', category:'plante', qty:'Séché', tags:['Purification','Clarté','Amitié'], correspondances:'Lune · Gémeaux · Cancer', notes:'Éclat et purification. Rompt les liens négatifs.' },
-  { id:'p12', emoji:'🌿', name:'Angélique', category:'plante', qty:'Racine séchée', tags:['Protection','Guérison','Vision'], correspondances:'Soleil · Vénus · Lion', notes:'Protection angélique puissante. Favorise les visions et la connexion spirituelle.' },
-
-  // HUILES ESSENTIELLES
-  { id:'h1', emoji:'💧', name:'HE Lavande', category:'huile', qty:'Flacon 10ml', tags:['Paix','Équilibre','Purification'], correspondances:'Mercure · Vénus', notes:'Polyvalente. Se mélange avec presque tout. Usage en diffusion, unction, bain rituel.' },
-  { id:'h2', emoji:'💧', name:'HE Encens (Oliban)', category:'huile', qty:'Flacon 5ml', tags:['Protection','Spiritualité','Méditation'], correspondances:'Soleil · Lion · Sagittaire', notes:'Sacrée entre toutes. Élève la vibration, protège, connecte au divin.' },
-  { id:'h3', emoji:'💧', name:'HE Rose de Damas', category:'huile', qty:'Flacon 2ml', tags:['Amour','Beauté','Cœur'], correspondances:'Vénus · Taureau · Balance', notes:'Une des huiles les plus précieuses. Amour inconditionnel, ouverture du cœur.' },
-  { id:'h4', emoji:'💧', name:'HE Patchouli', category:'huile', qty:'Flacon 10ml', tags:['Terre','Argent','Sensualité','Ancrage'], correspondances:'Saturne · Vénus · Taureau · Capricorne', notes:'Ancrage et prospérité matérielle. Rituel d\'abondance et de séduction.' },
-  { id:'h5', emoji:'💧', name:'HE Ylang-ylang', category:'huile', qty:'Flacon 5ml', tags:['Amour','Joie','Confiance'], correspondances:'Vénus · Lune · Taureau', notes:'Libère les blocages émotionnels autour de l\'amour et de l\'estime de soi.' },
-  { id:'h6', emoji:'💧', name:'HE Vétiver', category:'huile', qty:'Flacon 5ml', tags:['Ancrage','Protection','Stabilité'], correspondances:'Saturne · Terre · Capricorne', notes:'Protection et stabilité profondes. Enracine lors des périodes de transformation.' },
-  { id:'h7', emoji:'💧', name:'HE Géranium rosat', category:'huile', qty:'Flacon 10ml', tags:['Équilibre','Amour','Guérison'], correspondances:'Vénus · Balance', notes:'Harmonise les polarités. Excellent pour rituels de réconciliation avec soi-même.' },
-  { id:'h8', emoji:'💧', name:'HE Myrrhe', category:'huile', qty:'Flacon 5ml', tags:['Purification','Protection','Spiritualité'], correspondances:'Saturne · Lune · Scorpion', notes:'Sacrée et ancienne. Purification profonde et connexion aux ancêtres.' },
-  { id:'h9', emoji:'💧', name:'HE Bois de santal', category:'huile', qty:'Flacon 5ml', tags:['Méditation','Spiritualité','Paix'], correspondances:'Lune · Vénus · Cancer', notes:'Favorise la méditation profonde et l\'alignement spirituel.' },
-  { id:'h10', emoji:'💧', name:'HE Bergamote', category:'huile', qty:'Flacon 10ml', tags:['Joie','Confiance','Succès'], correspondances:'Mercure · Soleil · Lion', notes:'Libère de l\'anxiété, ouvre à la joie et à l\'abondance.' },
-  { id:'h11', emoji:'💧', name:'HE Jasmin', category:'huile', qty:'Flacon 2ml', tags:['Amour','Intuition','Rêves'], correspondances:'Lune · Cancer · Scorpion', notes:'Lié aux rêves prophétiques et à l\'amour mystique.' },
-
-  // BOUGIES
-  { id:'b1', emoji:'🕯️', name:'Bougies blanches', category:'bougie', qty:'x12', tags:['Purification','Clarté','Commencements'], correspondances:'Lune · Nouvelle lune', notes:'Usage universel. Toujours avoir en stock. Idéales pour rituel de nouvelle lune.' },
-  { id:'b2', emoji:'🕯️', name:'Bougies noires', category:'bougie', qty:'x6', tags:['Protection','Banissement','Transformation'], correspondances:'Saturne · Lune noire · Scorpion', notes:'Absorbe et neutralise les énergies négatives. Rituels de protection et de libération.' },
-  { id:'b3', emoji:'🕯️', name:'Bougies bordeaux', category:'bougie', qty:'x4', tags:['Pouvoir','Désir','Passion','Transformation'], correspondances:'Mars · Scorpion · Pluton', notes:'Couleur Flamme Noire. Rituels de pouvoir personnel et de transformation profonde.' },
-  { id:'b4', emoji:'🕯️', name:'Bougies dorées', category:'bougie', qty:'x3', tags:['Succès','Abondance','Conscience'], correspondances:'Soleil · Lion · Jupiter', notes:'Attirent le succès matériel et la lumière. Rituel du Soleil.' },
-  { id:'b5', emoji:'🕯️', name:'Bougies roses', category:'bougie', qty:'x6', tags:['Amour','Tendresse','Self-love','Harmonie'], correspondances:'Vénus · Taureau · Balance', notes:'Self-love, amour romantique tendre. Bougies de pleine lune en Balance.' },
-  { id:'b6', emoji:'🕯️', name:'Bougies violettes', category:'bougie', qty:'x3', tags:['Intuition','Spiritualité','Psychisme'], correspondances:'Jupiter · Neptune · Scorpion · Poissons', notes:'Développement des capacités intuitives et connexion à l\'âme.' },
-  { id:'b7', emoji:'🕯️', name:'Bougie pilier cuivrée', category:'bougie', qty:'x1', tags:['Ancrage','Abondance','Rayonnement'], correspondances:'Vénus · Taureau · Saturne', notes:'Grande bougie décorative. Correspond à l\'esthétique Flamme Noire. Rituels longs.' },
-
-  // MINÉRAUX & CRISTAUX
-  { id:'m1', emoji:'🔮', name:'Améthyste', category:'mineral', qty:'Cluster + pierres roulées', tags:['Intuition','Protection','Spiritualité','Sommeil'], correspondances:'Jupiter · Neptune · Poissons · Sagittaire', notes:'Pierre maîtresse de la spiritualité. Amplifie l\'intuition, protège psychiquement.' },
-  { id:'m2', emoji:'🔮', name:'Quartz clair', category:'mineral', qty:'Pointe + sphère', tags:['Amplification','Clarté','Programmation'], correspondances:'Tous éléments · Tous signes', notes:'Amplificateur universel. Programme et clarifie les intentions.' },
-  { id:'m3', emoji:'🔮', name:'Obsidienne noire', category:'mineral', qty:'Miroir + pierres', tags:['Protection','Vérité','Banissement'], correspondances:'Pluton · Saturne · Scorpion · Capricorne', notes:'Miroir de vérité. Protection extrême. À manipuler avec intention claire.' },
-  { id:'m4', emoji:'🔮', name:'Sélénite', category:'mineral', qty:'Baguette + plaque', tags:['Purification','Lumière','Connexion'], correspondances:'Lune · Cancer · Gémeaux', notes:'Nettoie et recharge les autres cristaux. Connexion aux guides et à l\'âme supérieure.' },
-  { id:'m5', emoji:'🔮', name:'Labradorite', category:'mineral', qty:'Pierres roulées x3', tags:['Magie','Transformation','Protection'], correspondances:'Uranus · Neptune · Scorpion', notes:'Pierre de la sorcière. Révèle les dons cachés, protège lors des transformations.' },
-  { id:'m6', emoji:'🔮', name:'Citrine', category:'mineral', qty:'Pointe', tags:['Abondance','Joie','Confiance','Succès'], correspondances:'Soleil · Mercure · Lion · Gémeaux', notes:'Pierre du soleil et de l\'abondance. N\'absorbe pas les énergies négatives.' },
-  { id:'m7', emoji:'🔮', name:'Pierre de lune', category:'mineral', qty:'Cabochon x2', tags:['Intuition','Féminité','Lune','Cycles'], correspondances:'Lune · Cancer · Balance', notes:'Profondément lunaire. Honore les cycles féminins, amplifie l\'intuition.' },
-  { id:'m8', emoji:'🔮', name:'Œil de tigre', category:'mineral', qty:'Pierres roulées', tags:['Confiance','Protection','Courage'], correspondances:'Soleil · Mars · Lion', notes:'Ancre le courage et la confiance. Protection contre le mauvais œil.' },
-  { id:'m9', emoji:'🔮', name:'Malachite', category:'mineral', qty:'Pierre brute', tags:['Transformation','Cœur','Abondance'], correspondances:'Vénus · Pluton · Taureau · Scorpion', notes:'Pierre de transformation profonde. Révèle et libère les blocages émotionnels.' },
-  { id:'m10', emoji:'🔮', name:'Tourmaline noire', category:'mineral', qty:'Brute x4', tags:['Protection','Ancrage','Banissement'], correspondances:'Saturne · Capricorne', notes:'Protection ultime contre les énergies négatives. À placer aux quatre coins de la maison.' },
-  { id:'m11', emoji:'🔮', name:'Rhodonite', category:'mineral', qty:'Piedras x2', tags:['Amour','Guérison','Pardon'], correspondances:'Vénus · Taureau', notes:'Guérit les blessures d\'amour. Favorise la compassion et l\'auto-pardon.' },
-  { id:'m12', emoji:'🔮', name:'Pyrite', category:'mineral', qty:'Cluster', tags:['Abondance','Succès','Volonté'], correspondances:'Mars · Soleil · Lion · Bélier', notes:'Or du fou devenu or alchimique. Attire l\'abondance et renforce la volonté.' },
+  {id:'p1',emoji:'🌿',name:'Sauge blanche',category:'plante',qty:'Grande quantité',tags:['Purification','Protection','Clarté'],correspondances:'Lune croissante · Jupiter · Sagittaire',notes:'Usage principal : fumigation, purification de lieux et d\'objets. Puissante avant tout rituel.'},
+  {id:'p2',emoji:'🌸',name:'Lavande vraie',category:'plante',qty:'Séchée',tags:['Paix','Amour','Sommeil','Purification'],correspondances:'Mercure · Vénus · Gémeaux · Vierge',notes:'Apaisante, protectrice. Excellent pour rituels de paix intérieure et d\'amour propre.'},
+  {id:'p3',emoji:'🌼',name:'Camomille',category:'plante',qty:'En vrac',tags:['Paix','Chance','Purification','Argent'],correspondances:'Soleil · Lion · Bélier',notes:'Attire la chance et la prospérité. Calme les esprits agités.'},
+  {id:'p4',emoji:'🌹',name:'Roses séchées',category:'plante',qty:'Pétales',tags:['Amour','Beauté','Désir','Féminité'],correspondances:'Vénus · Taureau · Balance',notes:'Symbole universel de l\'amour. Rituels d\'attraction et de self-love.'},
+  {id:'p5',emoji:'🍃',name:'Menthe poivrée',category:'plante',qty:'Fraîche & séchée',tags:['Protection','Purification','Voyage'],correspondances:'Mercure · Vierge · Gémeaux',notes:'Énergie de clarté mentale et de purification. Active les chakras supérieurs.'},
+  {id:'p6',emoji:'🌾',name:'Romarin',category:'plante',qty:'Branches séchées',tags:['Protection','Mémoire','Purification','Fidélité'],correspondances:'Soleil · Mars · Lion · Bélier',notes:'Protège les espaces et favorise la mémoire. Excellent substitut de sauge.'},
+  {id:'p7',emoji:'🍂',name:'Cannelle',category:'plante',qty:'Bâtons & poudre',tags:['Succès','Argent','Amour','Protection'],correspondances:'Soleil · Mars · Bélier · Lion',notes:'Puissant amplificateur d\'intentions. Active la circulation d\'énergie et d\'argent.'},
+  {id:'p8',emoji:'🌱',name:'Basilic',category:'plante',qty:'En pot & séché',tags:['Amour','Protection','Prospérité'],correspondances:'Mars · Scorpion · Bélier',notes:'Symbole de protection et d\'abondance dans de nombreuses traditions.'},
+  {id:'p9',emoji:'🌺',name:'Hibiscus',category:'plante',qty:'Fleurs séchées',tags:['Amour','Désir','Divination'],correspondances:'Vénus · Scorpion',notes:'Richement lié aux rituels d\'amour passionnel et de désir.'},
+  {id:'p10',emoji:'🌿',name:'Hysope',category:'plante',qty:'Séchée',tags:['Purification','Protection','Pardon'],correspondances:'Jupiter · Sagittaire',notes:'Herbe sacrée biblique. Purification profonde, libération des charges karmiques.'},
+  {id:'p11',emoji:'🍋',name:'Zeste de citron',category:'plante',qty:'Séché',tags:['Purification','Clarté','Amitié'],correspondances:'Lune · Gémeaux · Cancer',notes:'Éclat et purification. Rompt les liens négatifs.'},
+  {id:'p12',emoji:'🌿',name:'Angélique',category:'plante',qty:'Racine séchée',tags:['Protection','Guérison','Vision'],correspondances:'Soleil · Vénus · Lion',notes:'Protection angélique puissante. Favorise les visions et la connexion spirituelle.'},
+  {id:'h1',emoji:'💧',name:'HE Lavande',category:'huile',qty:'Flacon 10ml',tags:['Paix','Équilibre','Purification'],correspondances:'Mercure · Vénus',notes:'Polyvalente. Se mélange avec presque tout. Usage en diffusion, onction, bain rituel.'},
+  {id:'h2',emoji:'💧',name:'HE Encens (Oliban)',category:'huile',qty:'Flacon 5ml',tags:['Protection','Spiritualité','Méditation'],correspondances:'Soleil · Lion · Sagittaire',notes:'Sacrée entre toutes. Élève la vibration, protège, connecte au divin.'},
+  {id:'h3',emoji:'💧',name:'HE Rose de Damas',category:'huile',qty:'Flacon 2ml',tags:['Amour','Beauté','Cœur'],correspondances:'Vénus · Taureau · Balance',notes:'Une des huiles les plus précieuses. Amour inconditionnel, ouverture du cœur.'},
+  {id:'h4',emoji:'💧',name:'HE Patchouli',category:'huile',qty:'Flacon 5ml',tags:['Terre','Argent','Sensualité','Ancrage'],correspondances:'Saturne · Vénus · Taureau · Capricorne',notes:'Ancrage et prospérité matérielle. Rituel d\'abondance et de séduction.'},
+  {id:'h5',emoji:'💧',name:'HE Ylang-ylang',category:'huile',qty:'Flacon 5ml',tags:['Amour','Joie','Confiance'],correspondances:'Vénus · Lune · Taureau',notes:'Libère les blocages émotionnels autour de l\'amour et de l\'estime de soi.'},
+  {id:'h6',emoji:'💧',name:'HE Vétiver',category:'huile',qty:'Flacon 5ml',tags:['Ancrage','Protection','Stabilité'],correspondances:'Saturne · Terre · Capricorne',notes:'Protection et stabilité profondes. Enracine lors des périodes de transformation.'},
+  {id:'h7',emoji:'💧',name:'HE Géranium rosat',category:'huile',qty:'Flacon 10ml',tags:['Équilibre','Amour','Guérison'],correspondances:'Vénus · Balance',notes:'Harmonise les polarités. Excellent pour rituels de réconciliation avec soi-même.'},
+  {id:'h8',emoji:'💧',name:'HE Myrrhe',category:'huile',qty:'Flacon 5ml',tags:['Purification','Protection','Spiritualité'],correspondances:'Saturne · Lune · Scorpion',notes:'Sacrée et ancienne. Purification profonde et connexion aux ancêtres.'},
+  {id:'h9',emoji:'💧',name:'HE Bois de santal',category:'huile',qty:'Flacon 5ml',tags:['Méditation','Spiritualité','Paix'],correspondances:'Lune · Vénus · Cancer',notes:'Favorise la méditation profonde et l\'alignement spirituel.'},
+  {id:'h10',emoji:'💧',name:'HE Bergamote',category:'huile',qty:'Flacon 10ml',tags:['Joie','Confiance','Succès'],correspondances:'Mercure · Soleil · Lion',notes:'Libère de l\'anxiété, ouvre à la joie et à l\'abondance.'},
+  {id:'h11',emoji:'💧',name:'HE Jasmin',category:'huile',qty:'Flacon 2ml',tags:['Amour','Intuition','Rêves'],correspondances:'Lune · Cancer · Scorpion',notes:'Lié aux rêves prophétiques et à l\'amour mystique.'},
+  {id:'b1',emoji:'🕯️',name:'Bougies blanches',category:'bougie',qty:'x12',tags:['Purification','Clarté','Commencements'],correspondances:'Lune · Nouvelle lune',notes:'Usage universel. Toujours avoir en stock. Idéales pour rituel de nouvelle lune.'},
+  {id:'b2',emoji:'🕯️',name:'Bougies noires',category:'bougie',qty:'x6',tags:['Protection','Banissement','Transformation'],correspondances:'Saturne · Lune noire · Scorpion',notes:'Absorbe et neutralise les énergies négatives. Rituels de protection et de libération.'},
+  {id:'b3',emoji:'🕯️',name:'Bougies bordeaux',category:'bougie',qty:'x4',tags:['Pouvoir','Désir','Passion','Transformation'],correspondances:'Mars · Scorpion · Pluton',notes:'Couleur Flamme Noire. Rituels de pouvoir personnel et de transformation profonde.'},
+  {id:'b4',emoji:'🕯️',name:'Bougies dorées',category:'bougie',qty:'x3',tags:['Succès','Abondance','Conscience'],correspondances:'Soleil · Lion · Jupiter',notes:'Attirent le succès matériel et la lumière. Rituel du Soleil.'},
+  {id:'b5',emoji:'🕯️',name:'Bougies roses',category:'bougie',qty:'x6',tags:['Amour','Tendresse','Self-love','Harmonie'],correspondances:'Vénus · Taureau · Balance',notes:'Self-love, amour romantique tendre. Bougies de pleine lune en Balance.'},
+  {id:'b6',emoji:'🕯️',name:'Bougies violettes',category:'bougie',qty:'x3',tags:['Intuition','Spiritualité','Psychisme'],correspondances:'Jupiter · Neptune · Scorpion · Poissons',notes:'Développement des capacités intuitives et connexion à l\'âme.'},
+  {id:'b7',emoji:'🕯️',name:'Bougie pilier cuivrée',category:'bougie',qty:'x1',tags:['Ancrage','Abondance','Rayonnement'],correspondances:'Vénus · Taureau · Saturne',notes:'Grande bougie décorative. Correspond à l\'esthétique Flamme Noire. Rituels longs.'},
+  {id:'m1',emoji:'🔮',name:'Améthyste',category:'mineral',qty:'Cluster + pierres roulées',tags:['Intuition','Protection','Spiritualité','Sommeil'],correspondances:'Jupiter · Neptune · Poissons · Sagittaire',notes:'Pierre maîtresse de la spiritualité. Amplifie l\'intuition, protège psychiquement.'},
+  {id:'m2',emoji:'🔮',name:'Quartz clair',category:'mineral',qty:'Pointe + sphère',tags:['Amplification','Clarté','Programmation'],correspondances:'Tous éléments · Tous signes',notes:'Amplificateur universel. Programme et clarifie les intentions.'},
+  {id:'m3',emoji:'🔮',name:'Obsidienne noire',category:'mineral',qty:'Miroir + pierres',tags:['Protection','Vérité','Banissement'],correspondances:'Pluton · Saturne · Scorpion · Capricorne',notes:'Miroir de vérité. Protection extrême. À manipuler avec intention claire.'},
+  {id:'m4',emoji:'🔮',name:'Sélénite',category:'mineral',qty:'Baguette + plaque',tags:['Purification','Lumière','Connexion'],correspondances:'Lune · Cancer · Gémeaux',notes:'Nettoie et recharge les autres cristaux. Connexion aux guides et à l\'âme supérieure.'},
+  {id:'m5',emoji:'🔮',name:'Labradorite',category:'mineral',qty:'Pierres roulées x3',tags:['Magie','Transformation','Protection'],correspondances:'Uranus · Neptune · Scorpion',notes:'Pierre de la sorcière. Révèle les dons cachés, protège lors des transformations.'},
+  {id:'m6',emoji:'🔮',name:'Citrine',category:'mineral',qty:'Pointe',tags:['Abondance','Joie','Confiance','Succès'],correspondances:'Soleil · Mercure · Lion · Gémeaux',notes:'Pierre du soleil et de l\'abondance. N\'absorbe pas les énergies négatives.'},
+  {id:'m7',emoji:'🔮',name:'Pierre de lune',category:'mineral',qty:'Cabochon x2',tags:['Intuition','Féminité','Lune','Cycles'],correspondances:'Lune · Cancer · Balance',notes:'Profondément lunaire. Honore les cycles féminins, amplifie l\'intuition.'},
+  {id:'m8',emoji:'🔮',name:'Œil de tigre',category:'mineral',qty:'Pierres roulées',tags:['Confiance','Protection','Courage'],correspondances:'Soleil · Mars · Lion',notes:'Ancre le courage et la confiance. Protection contre le mauvais œil.'},
+  {id:'m9',emoji:'🔮',name:'Malachite',category:'mineral',qty:'Pierre brute',tags:['Transformation','Cœur','Abondance'],correspondances:'Vénus · Pluton · Taureau · Scorpion',notes:'Pierre de transformation profonde. Révèle et libère les blocages émotionnels.'},
+  {id:'m10',emoji:'🔮',name:'Tourmaline noire',category:'mineral',qty:'Brute x4',tags:['Protection','Ancrage','Banissement'],correspondances:'Saturne · Capricorne',notes:'Protection ultime contre les énergies négatives. À placer aux quatre coins de la maison.'},
+  {id:'m11',emoji:'🔮',name:'Rhodonite',category:'mineral',qty:'Pierres x2',tags:['Amour','Guérison','Pardon'],correspondances:'Vénus · Taureau',notes:'Guérit les blessures d\'amour. Favorise la compassion et l\'auto-pardon.'},
+  {id:'m12',emoji:'🔮',name:'Pyrite',category:'mineral',qty:'Cluster',tags:['Abondance','Succès','Volonté'],correspondances:'Mars · Soleil · Lion · Bélier',notes:'Or du fou devenu or alchimique. Attire l\'abondance et renforce la volonté.'},
 ];
 
 const DEFAULT_RITUALS = [
-  {
-    id:'r1',
-    name:'Rituel de Nouvelle Lune',
-    intent:'Planter des intentions, ouvrir un nouveau cycle',
-    lune:'🌑 Nouvelle lune',
-    planete:'☽ Lundi — Lune',
-    ingredients:['Bougie noire','Bougie blanche','Sauge blanche','Sélénite','Pierre de lune','Encens Oliban'],
-    steps:'1. Purifier l\'espace à la sauge blanche.\n2. Allumer la bougie noire (libération du cycle passé).\n3. Allumer la bougie blanche (intention du nouveau cycle).\n4. Tenir la pierre de lune, formuler 3 intentions précises.\n5. Écrire les intentions sur papier, les déposer sous la sélénite.\n6. Méditer 10 min sur l\'énergie de commencement.\n7. Laisser les bougies se consumer ou éteindre avec intention.',
-    tags:['Cycles','Intentions','Commencement']
-  },
-  {
-    id:'r2',
-    name:'Rituel de Pleine Lune',
-    intent:'Amplifier, manifester, libérer ce qui n\'est plus',
-    lune:'🌕 Pleine lune',
-    planete:'☽ Lundi — Lune',
-    ingredients:['Bougie blanche','Bougie rose','Roses séchées','Pierre de lune','Améthyste','Sélénite','HE Rose de Damas'],
-    steps:'1. Disposer les cristaux en cercle sous la pleine lune (ou près d\'une fenêtre).\n2. Allumer bougie rose (amour, célébration).\n3. Tenir l\'améthyste, visualiser ce que tu manifestes.\n4. Déposer les pétales de rose autour des bougies.\n5. Écrire sur papier ce que tu libères. Brûler le papier (sécurité).\n6. Unction : poser 1 goutte de Rose de Damas sur le sternum.\n7. Bain de lune des cristaux toute la nuit.',
-    tags:['Manifestation','Libération','Plénitude']
-  },
-  {
-    id:'r3',
-    name:'Bain Rituel de Purification',
-    intent:'Se libérer des énergies stagnantes et se recharger',
-    lune:'🌘 Lune décroissante',
-    planete:'☽ Lundi — Lune',
-    ingredients:['Sauge blanche','Sel marin','Lavande','HE Lavande','Bougie blanche','Sélénite'],
-    steps:'1. Purifier la salle de bain à la sauge.\n2. Poser la sélénite près de la baignoire.\n3. Préparer le bain : sel marin + lavande séchée + 5 gouttes HE Lavande.\n4. Allumer la bougie blanche.\n5. Entrer dans le bain avec intention. Visualiser les énergies quitter le corps.\n6. Rester 20 min minimum. Méditer ou chanter.\n7. En sortant, laisser l\'eau partir "emporter" ce dont tu te libères.',
-    tags:['Purification','Recharge','Eau']
-  },
-  {
-    id:'r4',
-    name:'Rituel de Protection du Foyer',
-    intent:'Créer un bouclier énergétique pour le lieu de vie',
-    lune:'🌒 Lune croissante',
-    planete:'♄ Samedi — Saturne',
-    ingredients:['Tourmaline noire x4','Obsidienne noire','Romarin','Bougie noire','HE Encens','HE Vétiver'],
-    steps:'1. Commencer par l\'est, marcher dans le sens des aiguilles d\'une montre.\n2. Placer une tourmaline noire dans chaque coin de la pièce principale.\n3. Bruler du romarin en fumigation de chaque pièce.\n4. Allumer bougie noire au centre du foyer.\n5. Diffuser Encens + Vétiver.\n6. Poser l\'obsidienne à l\'entrée principale.\n7. Visualiser une lumière bordeaux entourant et scellant l\'espace.',
-    tags:['Protection','Foyer','Bouclier']
-  },
-  {
-    id:'r5',
-    name:'Rituel d\'Abondance Vénusien',
-    intent:'Activer la circulation de la prospérité et du plaisir',
-    lune:'🌒 Lune croissante',
-    planete:'♀ Vendredi — Vénus',
-    ingredients:['Bougie dorée','Pyrite','Citrine','Cannelle','HE Patchouli','HE Bergamote','Basilic'],
-    steps:'1. Vendredi matin ou soir. Disposition: pyrite + citrine devant la bougie dorée.\n2. Tracer un cercle de cannelle autour des cristaux.\n3. Déposer quelques feuilles de basilic.\n4. Oindre la bougie avec Patchouli + Bergamote (base vers haut = attirer).\n5. Allumer. Formuler une affirmation d\'abondance 3 fois.\n6. Visualiser l\'argent, les opportunités, le plaisir fluide.\n7. Laisser brûler 1h minimum.',
-    tags:['Abondance','Vénus','Prospérité']
-  },
-  {
-    id:'r6',
-    name:'Rituel de Libération Saturnien',
-    intent:'Couper les liens, rompre les cycles, se libérer',
-    lune:'🌘 Lune décroissante',
-    planete:'♄ Samedi — Saturne',
-    ingredients:['Bougie noire','Obsidienne noire','HE Myrrhe','Romarin','Sel noir'],
-    steps:'1. Samedi soir, lune décroissante idéale.\n2. Écrire ce dont tu veux te libérer (personne, habitude, croyance).\n3. Allumer la bougie noire. Oindre avec Myrrhe.\n4. Lire le papier à voix haute. Affirmer : "Je romps ce lien. C\'est terminé."\n5. Brûler le papier avec la flamme de la bougie noire.\n6. Disposer sel noir + obsidienne autour des cendres.\n7. Enterrer ou jeter les cendres hors de chez soi.',
-    tags:['Libération','Rupture','Saturne']
-  },
-  {
-    id:'r7',
-    name:'Rituel d\'Activation Solaire',
-    intent:'Renforcer la confiance, la visibilité, le pouvoir personnel',
-    lune:'🌕 Pleine lune',
-    planete:'☉ Dimanche — Soleil',
-    ingredients:['Bougie dorée','Bougie bordeaux','Œil de tigre','Citrine','HE Bergamote','Cannelle','HE Encens'],
-    steps:'1. Dimanche à midi ou à l\'aube.\n2. S\'installer face à l\'est (ou à la fenêtre ensoleillée).\n3. Allumer bougie dorée + bordeaux.\n4. Tenir l\'œil de tigre et la citrine dans chaque main.\n5. Oindre les poignets et le sternum avec Bergamote.\n6. Affirmer à voix haute : "Je suis visible. Je suis puissante. Je rayonne."\n7. Rester 15 min dans le silence, connectée au soleil.',
-    tags:['Soleil','Confiance','Pouvoir','Visibilité']
-  },
-  {
-    id:'r8',
-    name:'Rituel de Rêves & Vision',
-    intent:'Activer le canal onirique et la vision intuitive',
-    lune:'🌕 Pleine lune',
-    planete:'☽ Lundi — Lune',
-    ingredients:['Améthyste','Pierre de lune','HE Jasmin','HE Lavande','Bougie violette','Angélique'],
-    steps:'1. Juste avant de dormir.\n2. Allumer bougie violette (éteignez avant de dormir !).\n3. Diffuser Jasmin + Lavande dans la chambre.\n4. Placer améthyste et pierre de lune sous l\'oreiller.\n5. Infusion d\'angélique si disponible.\n6. Tenir les cristaux, formuler l\'intention de vision.\n7. Carnet de rêves prêt au réveil.',
-    tags:['Rêves','Vision','Intuition','Nuit']
-  },
-  {
-    id:'r9',
-    name:'Rituel de Self-Love',
-    intent:'Se reconnecter à sa propre valeur et à son amour propre',
-    lune:'🌒 Lune croissante',
-    planete:'♀ Vendredi — Vénus',
-    ingredients:['Bougie rose','Roses séchées','Rhodonite','HE Rose de Damas','HE Ylang-ylang','HE Géranium','Pierre de lune'],
-    steps:'1. Préparer un espace doux. Miroir si possible.\n2. Allumer bougie rose. Cercle de pétales de roses.\n3. Oindre le cœur, les mains, le front avec Rose + Ylang-ylang + Géranium.\n4. Tenir la rhodonite contre le cœur.\n5. Se regarder dans le miroir, prononcer 5 vérités bienveillantes sur soi.\n6. Écrire une lettre à soi-même. La conserver.\n7. Bain avec HE ou bain de pieds avec pétales.',
-    tags:['Self-love','Cœur','Féminité','Guérison']
-  },
-  {
-    id:'r10',
-    name:'Rituel de Transmutation Alchimique',
-    intent:'Transformer la douleur, la colère ou le chaos en puissance',
-    lune:'🌘 Lune décroissante',
-    planete:'♂ Mardi — Mars',
-    ingredients:['Bougie bordeaux','Labradorite','Malachite','HE Vétiver','HE Encens','Obsidienne noire','Myrrhe'],
-    steps:'1. Reconnaître et nommer ce qui est transmué (émotion, situation).\n2. Allumer la bougie bordeaux. Diffuser Encens + Vétiver.\n3. Tenir la labradorite (main gauche) + malachite (main droite).\n4. Observer la flamme bordeaux. Laisser la colère, la douleur monter.\n5. Visualiser cette énergie brute se transformer en lumière bordeaux-cuivré.\n6. Affirmer : "Je transforme. Je transmute. Je suis l\'alchimiste."\n7. Méditer 20 min. Déposer les pierres sur l\'obsidienne.',
-    tags:['Transmutation','Alchimie','Scorpion','Transformation']
-  },
-  {
-    id:'r11',
-    name:'Rituel Mercurien de Clarté',
-    intent:'Dissiper le brouillard mental, prendre une décision',
-    lune:'🌒 Lune croissante',
-    planete:'☿ Mercredi — Mercure',
-    ingredients:['Bougie blanche','Quartz clair','Menthe poivrée','HE Bergamote','HE Lavande','Citrine'],
-    steps:'1. Mercredi matin de préférence.\n2. Allumer bougie blanche. Diffuser Bergamote + Lavande.\n3. Poser quartz clair + citrine devant soi.\n4. Frotter quelques feuilles de menthe entre les doigts. Respirer.\n5. Écrire la question ou la décision sur papier.\n6. Observer la flamme blanche. Laisser la clarté venir.\n7. Écrire ce qui émerge sans filtrer. Relire après 24h.',
-    tags:['Clarté','Décision','Mental','Mercure']
-  },
-  {
-    id:'r12',
-    name:'Rituel de Connexion aux Ancêtres',
-    intent:'Honorer et se connecter aux lignées qui nous habitent',
-    lune:'🌘 Lune décroissante',
-    planete:'♄ Samedi — Saturne',
-    ingredients:['Bougie noire','Bougie blanche','HE Myrrhe','HE Encens','Obsidienne noire','Sauge blanche','Angélique'],
-    steps:'1. Préparer un espace avec photo ou objet symbolique des ancêtres.\n2. Purifier à la sauge.\n3. Allumer bougie noire (ancêtres) et blanche (connexion lumineuse).\n4. Diffuser Myrrhe + Encens.\n5. Parler aux ancêtres à voix haute. Remercier. Demander guidance.\n6. Tenir l\'obsidienne, écouter en silence 15 min.\n7. Brûler une feuille d\'angélique comme offrande.',
-    tags:['Ancêtres','Lignée','Karma','Samedi']
-  },
-  {
-    id:'r13',
-    name:'Rituel de Rayonnement Public',
-    intent:'Activer sa magnétisme et sa présence avant une performance',
-    lune:'🌕 Pleine lune',
-    planete:'☉ Dimanche — Soleil',
-    ingredients:['Bougie dorée','Bougie bordeaux','Œil de tigre','Pyrite','HE Bergamote','HE Ylang-ylang','Cannelle'],
-    steps:'1. Avant un live, une conférence, une création de contenu importante.\n2. Allumer bougie dorée + bordeaux.\n3. Tracer un cercle de cannelle autour de soi si possible.\n4. Tenir pyrite (main droite) + œil de tigre (main gauche).\n5. Oindre gorge et solaire avec Bergamote + Ylang-ylang.\n6. Dire à voix haute : "Je suis vue. Je suis entendue. Je magnétise."\n7. Rester 5 min dans cet état. Sortir allumée.',
-    tags:['Magnétisme','Présence','Contenu','Public']
-  },
+  {id:'r1',name:'Rituel de Nouvelle Lune',intent:'Planter des intentions, ouvrir un nouveau cycle',lune:'🌑 Nouvelle lune',planete:'☽ Lundi — Lune',ingredients:['Bougie noire','Bougie blanche','Sauge blanche','Sélénite','Pierre de lune','Encens Oliban'],steps:'1. Purifier l\'espace à la sauge blanche.\n2. Allumer la bougie noire (libération du cycle passé).\n3. Allumer la bougie blanche (intention du nouveau cycle).\n4. Tenir la pierre de lune, formuler 3 intentions précises.\n5. Écrire les intentions sur papier, les déposer sous la sélénite.\n6. Méditer 10 min sur l\'énergie de commencement.\n7. Laisser les bougies se consumer ou éteindre avec intention.',tags:['Cycles','Intentions','Commencement']},
+  {id:'r2',name:'Rituel de Pleine Lune',intent:'Amplifier, manifester, libérer ce qui n\'est plus',lune:'🌕 Pleine lune',planete:'☽ Lundi — Lune',ingredients:['Bougie blanche','Bougie rose','Roses séchées','Pierre de lune','Améthyste','Sélénite','HE Rose de Damas'],steps:'1. Disposer les cristaux en cercle sous la pleine lune.\n2. Allumer bougie rose (amour, célébration).\n3. Tenir l\'améthyste, visualiser ce que tu manifestes.\n4. Déposer les pétales de rose autour des bougies.\n5. Écrire sur papier ce que tu libères. Brûler le papier.\n6. Onction : poser 1 goutte de Rose de Damas sur le sternum.\n7. Bain de lune des cristaux toute la nuit.',tags:['Manifestation','Libération','Plénitude']},
+  {id:'r3',name:'Bain Rituel de Purification',intent:'Se libérer des énergies stagnantes et se recharger',lune:'🌘 Lune décroissante',planete:'☽ Lundi — Lune',ingredients:['Sauge blanche','Sel marin','Lavande','HE Lavande','Bougie blanche','Sélénite'],steps:'1. Purifier la salle de bain à la sauge.\n2. Poser la sélénite près de la baignoire.\n3. Préparer le bain : sel marin + lavande séchée + 5 gouttes HE Lavande.\n4. Allumer la bougie blanche.\n5. Entrer dans le bain avec intention. Visualiser les énergies quitter le corps.\n6. Rester 20 min minimum.\n7. En sortant, laisser l\'eau partir "emporter" ce dont tu te libères.',tags:['Purification','Recharge','Eau']},
+  {id:'r4',name:'Rituel de Protection du Foyer',intent:'Créer un bouclier énergétique pour le lieu de vie',lune:'🌒 Lune croissante',planete:'♄ Samedi — Saturne',ingredients:['Tourmaline noire x4','Obsidienne noire','Romarin','Bougie noire','HE Encens','HE Vétiver'],steps:'1. Commencer par l\'est, marcher dans le sens des aiguilles d\'une montre.\n2. Placer une tourmaline noire dans chaque coin.\n3. Bruler du romarin en fumigation de chaque pièce.\n4. Allumer bougie noire au centre du foyer.\n5. Diffuser Encens + Vétiver.\n6. Poser l\'obsidienne à l\'entrée principale.\n7. Visualiser une lumière bordeaux entourant l\'espace.',tags:['Protection','Foyer','Bouclier']},
+  {id:'r5',name:'Rituel d\'Abondance Vénusien',intent:'Activer la circulation de la prospérité et du plaisir',lune:'🌒 Lune croissante',planete:'♀ Vendredi — Vénus',ingredients:['Bougie dorée','Pyrite','Citrine','Cannelle','HE Patchouli','HE Bergamote','Basilic'],steps:'1. Vendredi matin ou soir. Disposition: pyrite + citrine devant la bougie dorée.\n2. Tracer un cercle de cannelle autour des cristaux.\n3. Déposer quelques feuilles de basilic.\n4. Oindre la bougie avec Patchouli + Bergamote (base vers haut = attirer).\n5. Allumer. Formuler une affirmation d\'abondance 3 fois.\n6. Visualiser l\'argent, les opportunités, le plaisir fluide.\n7. Laisser brûler 1h minimum.',tags:['Abondance','Vénus','Prospérité']},
+  {id:'r6',name:'Rituel de Libération Saturnien',intent:'Couper les liens, rompre les cycles, se libérer',lune:'🌘 Lune décroissante',planete:'♄ Samedi — Saturne',ingredients:['Bougie noire','Obsidienne noire','HE Myrrhe','Romarin','Sel noir'],steps:'1. Samedi soir, lune décroissante idéale.\n2. Écrire ce dont tu veux te libérer.\n3. Allumer la bougie noire. Oindre avec Myrrhe.\n4. Lire le papier à voix haute. Affirmer : "Je romps ce lien."\n5. Brûler le papier avec la flamme.\n6. Disposer sel noir + obsidienne autour des cendres.\n7. Enterrer ou jeter les cendres hors de chez soi.',tags:['Libération','Rupture','Saturne']},
+  {id:'r7',name:'Rituel d\'Activation Solaire',intent:'Renforcer la confiance, la visibilité, le pouvoir personnel',lune:'🌕 Pleine lune',planete:'☉ Dimanche — Soleil',ingredients:['Bougie dorée','Bougie bordeaux','Œil de tigre','Citrine','HE Bergamote','Cannelle','HE Encens'],steps:'1. Dimanche à midi ou à l\'aube.\n2. S\'installer face à l\'est.\n3. Allumer bougie dorée + bordeaux.\n4. Tenir l\'œil de tigre et la citrine dans chaque main.\n5. Oindre les poignets et le sternum avec Bergamote.\n6. Affirmer : "Je suis visible. Je suis puissante. Je rayonne."\n7. Rester 15 min dans le silence.',tags:['Soleil','Confiance','Pouvoir','Visibilité']},
+  {id:'r8',name:'Rituel de Rêves & Vision',intent:'Activer le canal onirique et la vision intuitive',lune:'🌕 Pleine lune',planete:'☽ Lundi — Lune',ingredients:['Améthyste','Pierre de lune','HE Jasmin','HE Lavande','Bougie violette','Angélique'],steps:'1. Juste avant de dormir.\n2. Allumer bougie violette (éteindre avant de dormir !).\n3. Diffuser Jasmin + Lavande dans la chambre.\n4. Placer améthyste et pierre de lune sous l\'oreiller.\n5. Infusion d\'angélique si disponible.\n6. Tenir les cristaux, formuler l\'intention de vision.\n7. Carnet de rêves prêt au réveil.',tags:['Rêves','Vision','Intuition','Nuit']},
+  {id:'r9',name:'Rituel de Self-Love',intent:'Se reconnecter à sa propre valeur et à son amour propre',lune:'🌒 Lune croissante',planete:'♀ Vendredi — Vénus',ingredients:['Bougie rose','Roses séchées','Rhodonite','HE Rose de Damas','HE Ylang-ylang','HE Géranium','Pierre de lune'],steps:'1. Préparer un espace doux. Miroir si possible.\n2. Allumer bougie rose. Cercle de pétales de roses.\n3. Oindre le cœur avec Rose + Ylang-ylang + Géranium.\n4. Tenir la rhodonite contre le cœur.\n5. Se regarder dans le miroir, prononcer 5 vérités bienveillantes sur soi.\n6. Écrire une lettre à soi-même. La conserver.\n7. Bain avec HE ou bain de pieds avec pétales.',tags:['Self-love','Cœur','Féminité','Guérison']},
+  {id:'r10',name:'Rituel de Transmutation Alchimique',intent:'Transformer la douleur, la colère ou le chaos en puissance',lune:'🌘 Lune décroissante',planete:'♂ Mardi — Mars',ingredients:['Bougie bordeaux','Labradorite','Malachite','HE Vétiver','HE Encens','Obsidienne noire','Myrrhe'],steps:'1. Reconnaître et nommer ce qui est transmué.\n2. Allumer la bougie bordeaux. Diffuser Encens + Vétiver.\n3. Tenir la labradorite (main gauche) + malachite (main droite).\n4. Observer la flamme bordeaux. Laisser l\'émotion brute monter.\n5. Visualiser cette énergie se transformer en lumière bordeaux-cuivré.\n6. Affirmer : "Je transforme. Je transmute. Je suis l\'alchimiste."\n7. Méditer 20 min. Déposer les pierres sur l\'obsidienne.',tags:['Transmutation','Alchimie','Scorpion']},
+  {id:'r11',name:'Rituel Mercurien de Clarté',intent:'Dissiper le brouillard mental, prendre une décision',lune:'🌒 Lune croissante',planete:'☿ Mercredi — Mercure',ingredients:['Bougie blanche','Quartz clair','Menthe poivrée','HE Bergamote','HE Lavande','Citrine'],steps:'1. Mercredi matin de préférence.\n2. Allumer bougie blanche. Diffuser Bergamote + Lavande.\n3. Poser quartz clair + citrine devant soi.\n4. Frotter quelques feuilles de menthe entre les doigts. Respirer.\n5. Écrire la question ou la décision sur papier.\n6. Observer la flamme blanche. Laisser la clarté venir.\n7. Écrire ce qui émerge sans filtrer. Relire après 24h.',tags:['Clarté','Décision','Mental','Mercure']},
+  {id:'r12',name:'Rituel de Connexion aux Ancêtres',intent:'Honorer et se connecter aux lignées qui nous habitent',lune:'🌘 Lune décroissante',planete:'♄ Samedi — Saturne',ingredients:['Bougie noire','Bougie blanche','HE Myrrhe','HE Encens','Obsidienne noire','Sauge blanche','Angélique'],steps:'1. Préparer un espace avec photo ou objet symbolique des ancêtres.\n2. Purifier à la sauge.\n3. Allumer bougie noire (ancêtres) et blanche (connexion lumineuse).\n4. Diffuser Myrrhe + Encens.\n5. Parler aux ancêtres à voix haute. Remercier. Demander guidance.\n6. Tenir l\'obsidienne, écouter en silence 15 min.\n7. Brûler une feuille d\'angélique comme offrande.',tags:['Ancêtres','Lignée','Karma']},
+  {id:'r13',name:'Rituel de Rayonnement Public',intent:'Activer son magnétisme et sa présence avant une performance',lune:'🌕 Pleine lune',planete:'☉ Dimanche — Soleil',ingredients:['Bougie dorée','Bougie bordeaux','Œil de tigre','Pyrite','HE Bergamote','HE Ylang-ylang','Cannelle'],steps:'1. Avant un live, une conférence, une création de contenu.\n2. Allumer bougie dorée + bordeaux.\n3. Tracer un cercle de cannelle autour de soi si possible.\n4. Tenir pyrite (main droite) + œil de tigre (main gauche).\n5. Oindre gorge et solaire avec Bergamote + Ylang-ylang.\n6. Dire à voix haute : "Je suis vue. Je suis entendue. Je magnétise."\n7. Rester 5 min dans cet état. Sortir allumée.',tags:['Magnétisme','Présence','Public']},
 ];
 
 // ============================================================
@@ -1064,6 +495,10 @@ let inventory = JSON.parse(localStorage.getItem('grimoire_inventory') || 'null')
 let rituals = JSON.parse(localStorage.getItem('grimoire_rituals') || 'null') || DEFAULT_RITUALS;
 let activeFilter = 'all';
 let currentTags = [];
+let editingItemId = null;
+let editingRitualId = null;
+let pendingDeleteId = null;
+let pendingDeleteType = null;
 
 function save() {
   localStorage.setItem('grimoire_inventory', JSON.stringify(inventory));
@@ -1077,73 +512,71 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
-  const items = document.querySelectorAll('.nav-item');
-  items.forEach(item => {
-    if (item.getAttribute('onclick') && item.getAttribute('onclick').includes(id)) {
-      item.classList.add('active');
-    }
+  document.querySelectorAll('.nav-item').forEach(item => {
+    if (item.getAttribute('onclick') && item.getAttribute('onclick').includes("'" + id + "'")) item.classList.add('active');
   });
+  if (id === 'bain-vaginal') initBainVaginal();
   if (id === 'inventaire') renderInventaire();
   if (id === 'rituels') renderRituels();
   if (id === 'timing') renderTiming();
+  if (id === 'ajouter-item') resetItemForm();
+  if (id === 'ajouter-rituel') resetRitualForm();
 }
 
 // ============================================================
-// TIMING COSMIQUE
+// TIMING
 // ============================================================
 const LUNAR_PHASES = [
-  { name:'Nouvelle lune', symbol:'🌑', energy:'Intentions, commencements' },
-  { name:'Croissante', symbol:'🌒', energy:'Croissance, attraction' },
-  { name:'Premier quartier', symbol:'🌓', energy:'Action, décision' },
-  { name:'Gibbeuse croissante', symbol:'🌔', energy:'Raffinement, persévérance' },
-  { name:'Pleine lune', symbol:'🌕', energy:'Manifestation, révélation' },
-  { name:'Gibbeuse décroissante', symbol:'🌖', energy:'Gratitude, partage' },
-  { name:'Dernier quartier', symbol:'🌗', energy:'Libération, bilan' },
-  { name:'Décroissante', symbol:'🌘', energy:'Dissolution, repos' },
+  {name:'Nouvelle lune',symbol:'🌑',energy:'Intentions, commencements'},
+  {name:'Croissante',symbol:'🌒',energy:'Croissance, attraction'},
+  {name:'Premier quartier',symbol:'🌓',energy:'Action, décision'},
+  {name:'Gibbeuse croissante',symbol:'🌔',energy:'Raffinement, persévérance'},
+  {name:'Pleine lune',symbol:'🌕',energy:'Manifestation, révélation'},
+  {name:'Gibbeuse décroissante',symbol:'🌖',energy:'Gratitude, partage'},
+  {name:'Dernier quartier',symbol:'🌗',energy:'Libération, bilan'},
+  {name:'Décroissante',symbol:'🌘',energy:'Dissolution, repos'},
 ];
-
 const PLANETARY_DAYS = [
-  { day:'Dimanche', planet:'Soleil ☉', symbol:'☉', energy:'Succès, vitalité, gloire', color:'or' },
-  { day:'Lundi', planet:'Lune ☽', symbol:'☽', energy:'Intuition, rêves, cycles', color:'argent' },
-  { day:'Mardi', planet:'Mars ♂', symbol:'♂', energy:'Courage, action, protection', color:'rouge' },
-  { day:'Mercredi', planet:'Mercure ☿', symbol:'☿', energy:'Communication, clarté, voyages', color:'orange' },
-  { day:'Jeudi', planet:'Jupiter ♃', symbol:'♃', energy:'Abondance, expansion, chance', color:'violet' },
-  { day:'Vendredi', planet:'Vénus ♀', symbol:'♀', energy:'Amour, beauté, plaisir', color:'rose' },
-  { day:'Samedi', planet:'Saturne ♄', symbol:'♄', energy:'Discipline, karma, libération', color:'noir' },
+  {day:'Dimanche',planet:'Soleil ☉',symbol:'☉',energy:'Succès, vitalité, gloire'},
+  {day:'Lundi',planet:'Lune ☽',symbol:'☽',energy:'Intuition, rêves, cycles'},
+  {day:'Mardi',planet:'Mars ♂',symbol:'♂',energy:'Courage, action, protection'},
+  {day:'Mercredi',planet:'Mercure ☿',symbol:'☿',energy:'Communication, clarté, voyages'},
+  {day:'Jeudi',planet:'Jupiter ♃',symbol:'♃',energy:'Abondance, expansion, chance'},
+  {day:'Vendredi',planet:'Vénus ♀',symbol:'♀',energy:'Amour, beauté, plaisir'},
+  {day:'Samedi',planet:'Saturne ♄',symbol:'♄',energy:'Discipline, karma, libération'},
 ];
-
 const ZODIAC_SIGNS = [
-  { name:'Bélier', symbol:'♈', start:[3,21], end:[4,19], element:'Feu' },
-  { name:'Taureau', symbol:'♉', start:[4,20], end:[5,20], element:'Terre' },
-  { name:'Gémeaux', symbol:'♊', start:[5,21], end:[6,20], element:'Air' },
-  { name:'Cancer', symbol:'♋', start:[6,21], end:[7,22], element:'Eau' },
-  { name:'Lion', symbol:'♌', start:[7,23], end:[8,22], element:'Feu' },
-  { name:'Vierge', symbol:'♍', start:[8,23], end:[9,22], element:'Terre' },
-  { name:'Balance', symbol:'♎', start:[9,23], end:[10,22], element:'Air' },
-  { name:'Scorpion', symbol:'♏', start:[10,23], end:[11,21], element:'Eau' },
-  { name:'Sagittaire', symbol:'♐', start:[11,22], end:[12,21], element:'Feu' },
-  { name:'Capricorne', symbol:'♑', start:[12,22], end:[1,19], element:'Terre' },
-  { name:'Verseau', symbol:'♒', start:[1,20], end:[2,18], element:'Air' },
-  { name:'Poissons', symbol:'♓', start:[2,19], end:[3,20], element:'Eau' },
+  {name:'Bélier',symbol:'♈',start:[3,21],end:[4,19],element:'Feu'},
+  {name:'Taureau',symbol:'♉',start:[4,20],end:[5,20],element:'Terre'},
+  {name:'Gémeaux',symbol:'♊',start:[5,21],end:[6,20],element:'Air'},
+  {name:'Cancer',symbol:'♋',start:[6,21],end:[7,22],element:'Eau'},
+  {name:'Lion',symbol:'♌',start:[7,23],end:[8,22],element:'Feu'},
+  {name:'Vierge',symbol:'♍',start:[8,23],end:[9,22],element:'Terre'},
+  {name:'Balance',symbol:'♎',start:[9,23],end:[10,22],element:'Air'},
+  {name:'Scorpion',symbol:'♏',start:[10,23],end:[11,21],element:'Eau'},
+  {name:'Sagittaire',symbol:'♐',start:[11,22],end:[12,21],element:'Feu'},
+  {name:'Capricorne',symbol:'♑',start:[12,22],end:[1,19],element:'Terre'},
+  {name:'Verseau',symbol:'♒',start:[1,20],end:[2,18],element:'Air'},
+  {name:'Poissons',symbol:'♓',start:[2,19],end:[3,20],element:'Eau'},
 ];
 
 function getCurrentSign(date) {
-  const m = date.getMonth() + 1, d = date.getDate();
+  const m = date.getMonth()+1, d = date.getDate();
   for (const s of ZODIAC_SIGNS) {
-    const [sm, sd] = s.start, [em, ed] = s.end;
-    if (sm <= em) { if ((m === sm && d >= sd) || (m === em && d <= ed) || (m > sm && m < em)) return s; }
-    else { if ((m === sm && d >= sd) || (m === em && d <= ed) || m > sm || m < em) return s; }
+    const [sm,sd]=s.start,[em,ed]=s.end;
+    if(sm<=em){if((m===sm&&d>=sd)||(m===em&&d<=ed)||(m>sm&&m<em))return s;}
+    else{if((m===sm&&d>=sd)||(m===em&&d<=ed)||m>sm||m<em)return s;}
   }
   return ZODIAC_SIGNS[0];
 }
 
 function getLunarPhase(date) {
   const known = new Date(2024,0,11);
-  const diff = (date - known) / (1000*60*60*24);
+  const diff = (date-known)/(1000*60*60*24);
   const cycle = 29.53059;
-  const pos = ((diff % cycle) + cycle) % cycle;
-  const idx = Math.floor(pos / (cycle/8));
-  return { phase: LUNAR_PHASES[idx], progress: pos };
+  const pos = ((diff%cycle)+cycle)%cycle;
+  const idx = Math.floor(pos/(cycle/8));
+  return {phase:LUNAR_PHASES[idx],progress:pos};
 }
 
 function renderCosmic() {
@@ -1165,76 +598,38 @@ function renderTiming() {
   const planet = PLANETARY_DAYS[dow];
   const lunar = getLunarPhase(now);
   const sign = getCurrentSign(now);
-  
   let phaseHTML = LUNAR_PHASES.map((p,i) => {
-    const isNow = LUNAR_PHASES.indexOf(lunar.phase) === i;
-    return `<div class="phase-item ${isNow ? 'current' : ''}"><span>${p.symbol}</span><span>${p.name.split(' ')[0]}</span></div>`;
+    const isNow = LUNAR_PHASES.indexOf(lunar.phase)===i;
+    return `<div class="phase-item ${isNow?'current':''}"><span>${p.symbol}</span><span>${p.name.split(' ')[0]}</span></div>`;
   }).join('');
-
   let planetsHTML = PLANETARY_DAYS.map((p,i) => {
-    const days = ['Di','Lu','Ma','Me','Je','Ve','Sa'];
-    const isToday = i === dow;
-    return `<div class="planet-day ${isToday ? 'today' : ''}">
-      <span>${days[i]}</span>
-      <span class="planet-name">${p.planet}</span>
-      <span class="planet-energy">${p.energy.split(',')[0]}</span>
-    </div>`;
+    const days=['Di','Lu','Ma','Me','Je','Ve','Sa'];
+    return `<div class="planet-day ${i===dow?'today':''}"><span>${days[i]}</span><span class="planet-name">${p.planet}</span><span class="planet-energy">${p.energy.split(',')[0]}</span></div>`;
   }).join('');
-
   document.getElementById('timing-grid').innerHTML = `
     <div class="timing-card">
       <h3>Phase lunaire actuelle</h3>
-      <div class="timing-current">
-        <span class="timing-symbol">${lunar.phase.symbol}</span>
-        <div class="timing-info">
-          <h4>${lunar.phase.name}</h4>
-          <p>${lunar.phase.energy}</p>
-        </div>
-      </div>
+      <div class="timing-current"><span class="timing-symbol">${lunar.phase.symbol}</span><div class="timing-info"><h4>${lunar.phase.name}</h4><p>${lunar.phase.energy}</p></div></div>
       <div class="moon-phases">${phaseHTML}</div>
     </div>
     <div class="timing-card">
       <h3>Planète du jour</h3>
-      <div class="timing-current">
-        <span class="timing-symbol">${planet.symbol}</span>
-        <div class="timing-info">
-          <h4>${planet.planet}</h4>
-          <p>${planet.energy}</p>
-        </div>
-      </div>
+      <div class="timing-current"><span class="timing-symbol">${planet.symbol}</span><div class="timing-info"><h4>${planet.planet}</h4><p>${planet.energy}</p></div></div>
       <div class="planets-week">${planetsHTML}</div>
     </div>
     <div class="timing-card">
       <h3>Signe solaire actuel</h3>
-      <div class="timing-current">
-        <span class="timing-symbol">${sign.symbol}</span>
-        <div class="timing-info">
-          <h4>${sign.name}</h4>
-          <p>Élément ${sign.element}</p>
-        </div>
-      </div>
+      <div class="timing-current"><span class="timing-symbol">${sign.symbol}</span><div class="timing-info"><h4>${sign.name}</h4><p>Élément ${sign.element}</p></div></div>
     </div>
   `;
-
-  // Rituels conseillés maintenant
   const phaseName = lunar.phase.name.toLowerCase();
-  const planetName = planet.planet;
-  
   const advised = rituals.filter(r => {
-    const luneMatch = r.lune && (
-      r.lune.toLowerCase().includes(phaseName.split(' ')[0]) ||
-      phaseName.includes(r.lune.split(' ')[1]?.toLowerCase() || '')
-    );
+    const luneMatch = r.lune && (r.lune.toLowerCase().includes(phaseName.split(' ')[0]) || phaseName.includes((r.lune.split(' ')[1]||'').toLowerCase()));
     const planeteMatch = r.planete && r.planete.includes(planet.symbol);
     return luneMatch || planeteMatch;
-  }).slice(0, 4);
-
+  }).slice(0,4);
   const el = document.getElementById('rituels-conseilles');
-  if (advised.length === 0) {
-    el.innerHTML = '<div class="empty-state"><span class="symbol">◌</span>Aucun rituel particulièrement aligné maintenant. Tous les rituels restent valides.</div>';
-    return;
-  }
-  el.innerHTML = advised.map(r => ritualCardHTML(r)).join('');
+  el.innerHTML = advised.length===0 ? '<div class="empty-state"><span class="symbol">◌</span>Aucun rituel particulièrement aligné maintenant.</div>' : advised.map(r=>ritualCardHTML(r)).join('');
 }
 
 // ============================================================
@@ -1248,110 +643,265 @@ function setFilter(f, btn) {
 }
 
 function renderInventaire() {
-  const search = (document.getElementById('search-inv')?.value || '').toLowerCase();
+  const search = (document.getElementById('search-inv')?.value||'').toLowerCase();
   const filtered = inventory.filter(item => {
-    const catMatch = activeFilter === 'all' || item.category === activeFilter;
-    const searchMatch = !search || item.name.toLowerCase().includes(search) || 
-      item.tags.some(t => t.toLowerCase().includes(search));
+    const catMatch = activeFilter==='all'||item.category===activeFilter;
+    const searchMatch = !search||item.name.toLowerCase().includes(search)||item.tags.some(t=>t.toLowerCase().includes(search));
     return catMatch && searchMatch;
   });
-
   const grid = document.getElementById('inventory-grid');
-  if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="symbol">◌</span>Aucun ingrédient trouvé</div>';
-    return;
-  }
+  if (filtered.length===0) { grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><span class="symbol">◌</span>Aucun ingrédient trouvé</div>'; return; }
   grid.innerHTML = filtered.map(item => `
     <div class="item-card" onclick="openItemModal('${item.id}')">
       <span class="item-emoji">${item.emoji}</span>
       <div class="item-name">${item.name}</div>
       <div class="item-category">${catLabel(item.category)}</div>
       <div class="item-qty">${item.qty}</div>
-      <div class="item-tags">${item.tags.slice(0,3).map(t => `<span class="item-tag">${t}</span>`).join('')}</div>
+      <div class="item-tags">${item.tags.slice(0,3).map(t=>`<span class="item-tag">${t}</span>`).join('')}</div>
+      <div class="card-actions" onclick="event.stopPropagation()">
+        <button class="btn-action" onclick="editItem('${item.id}')">Modifier</button>
+        <button class="btn-action danger" onclick="confirmDelete('item','${item.id}','${item.name.replace(/'/g,"\\'")}')">Suppr.</button>
+      </div>
     </div>
   `).join('');
 }
 
 function catLabel(c) {
-  return {plante:'Plante & Herbe',huile:'Huile essentielle',bougie:'Bougie',mineral:'Minéral & Cristal',autre:'Autre'}[c] || c;
+  return {plante:'Plante & Herbe',huile:'Huile essentielle',bougie:'Bougie',mineral:'Minéral & Cristal',autre:'Autre'}[c]||c;
 }
 
 function openItemModal(id) {
-  const item = inventory.find(i => i.id === id);
-  if (!item) return;
-  
-  const usedIn = rituals.filter(r => r.ingredients.some(ing => ing.toLowerCase().includes(item.name.toLowerCase().split(' ')[0])));
-  
+  const item = inventory.find(i=>i.id===id);
+  if(!item) return;
+  const usedIn = rituals.filter(r=>r.ingredients.some(ing=>ing.toLowerCase().includes(item.name.toLowerCase().split(' ')[0])));
   document.getElementById('modal-item-body').innerHTML = `
     <span class="modal-symbol">${item.emoji}</span>
     <h2>${item.name}</h2>
     <div class="modal-category">${catLabel(item.category)} · ${item.qty}</div>
-    <div class="modal-section">
-      <h4>Propriétés</h4>
-      <div class="tags">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-    </div>
-    ${item.correspondances ? `<div class="modal-section"><h4>Correspondances</h4><p>${item.correspondances}</p></div>` : ''}
-    ${item.notes ? `<div class="modal-section"><h4>Notes & vertus</h4><p>${item.notes}</p></div>` : ''}
-    ${usedIn.length > 0 ? `<div class="modal-section"><h4>Utilisé dans</h4><div class="tags">${usedIn.map(r => `<span class="tag" onclick="closeModal('modal-item');showPage('rituels')">${r.name}</span>`).join('')}</div></div>` : ''}
+    <div class="modal-section"><h4>Propriétés</h4><div class="tags">${item.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>
+    ${item.correspondances?`<div class="modal-section"><h4>Correspondances</h4><p>${item.correspondances}</p></div>`:''}
+    ${item.notes?`<div class="modal-section"><h4>Notes & vertus</h4><p>${item.notes}</p></div>`:''}
+    ${usedIn.length>0?`<div class="modal-section"><h4>Utilisé dans</h4><div class="tags">${usedIn.map(r=>`<span class="tag">${r.name}</span>`).join('')}</div></div>`:''}
   `;
+  document.getElementById('modal-edit-btn').onclick = () => { closeModal('modal-item'); editItem(id); };
+  document.getElementById('modal-delete-btn').onclick = () => { closeModal('modal-item'); confirmDelete('item', id, item.name); };
   document.getElementById('modal-item').classList.add('open');
 }
 
-function closeModal(id) {
-  document.getElementById(id).classList.remove('open');
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// ============================================================
+// MODIFIER ITEM
+// ============================================================
+function editItem(id) {
+  const item = inventory.find(i=>i.id===id);
+  if (!item) return;
+  editingItemId = id;
+  document.getElementById('form-item-title').textContent = 'Modifier l\'ingrédient';
+  document.getElementById('form-item-subtitle').textContent = item.name;
+  document.getElementById('edit-item-id').value = id;
+  document.getElementById('new-emoji').value = item.emoji;
+  document.getElementById('new-name').value = item.name;
+  document.getElementById('new-category').value = item.category;
+  document.getElementById('new-qty').value = item.qty;
+  document.getElementById('new-correspondances').value = item.correspondances||'';
+  document.getElementById('new-notes').value = item.notes||'';
+  currentTags = [...(item.tags||[])];
+  renderCurrentTags();
+  document.getElementById('btn-save-item').textContent = 'Sauvegarder';
+  document.getElementById('btn-delete-item').style.display = 'inline-block';
+  showPage('ajouter-item');
+  document.getElementById('page-ajouter-item').classList.add('active');
+}
+
+function resetItemForm() {
+  editingItemId = null;
+  document.getElementById('form-item-title').textContent = 'Nouvel ingrédient';
+  document.getElementById('form-item-subtitle').textContent = 'Ajouter à ton inventaire vivant';
+  document.getElementById('edit-item-id').value = '';
+  document.getElementById('new-emoji').value = '';
+  document.getElementById('new-name').value = '';
+  document.getElementById('new-qty').value = '';
+  document.getElementById('new-notes').value = '';
+  document.getElementById('new-correspondances').value = '';
+  document.getElementById('btn-save-item').textContent = 'Inscrire dans le grimoire';
+  document.getElementById('btn-delete-item').style.display = 'none';
+  currentTags = [];
+  renderCurrentTags();
+}
+
+function saveItem() {
+  const name = document.getElementById('new-name').value.trim();
+  if (!name) { showToast('Le nom est requis'); return; }
+  const data = {
+    emoji: document.getElementById('new-emoji').value||'◈',
+    name,
+    category: document.getElementById('new-category').value,
+    qty: document.getElementById('new-qty').value||'En stock',
+    tags: [...currentTags],
+    correspondances: document.getElementById('new-correspondances').value,
+    notes: document.getElementById('new-notes').value,
+  };
+  const editId = document.getElementById('edit-item-id').value;
+  if (editId) {
+    const idx = inventory.findIndex(i=>i.id===editId);
+    if (idx>=0) { inventory[idx] = {...inventory[idx], ...data}; save(); showToast('✓ Ingrédient mis à jour'); showPage('inventaire'); return; }
+  }
+  inventory.push({id:'p'+Date.now(), ...data});
+  save();
+  resetItemForm();
+  showToast('✓ Inscrit dans le Grimoire');
 }
 
 // ============================================================
 // RITUELS
 // ============================================================
 function ritualCardHTML(r) {
-  const available = r.ingredients.filter(ing => inventory.some(item => item.name.toLowerCase().includes(ing.toLowerCase().split(' ')[0])));
-  const pct = Math.round((available.length / r.ingredients.length) * 100);
-  let doableClass = pct >= 80 ? 'doable-yes' : pct >= 50 ? 'doable-partial' : 'doable-no';
-  let doableText = pct >= 80 ? '✓ Réalisable' : pct >= 50 ? '◐ Partiellement' : '○ Incomplet';
-
+  const available = r.ingredients.filter(ing=>inventory.some(item=>item.name.toLowerCase().includes(ing.toLowerCase().split(' ')[0])));
+  const pct = Math.round((available.length/r.ingredients.length)*100);
+  let doableClass = pct>=80?'doable-yes':pct>=50?'doable-partial':'doable-no';
+  let doableText = pct>=80?'✓ Réalisable':pct>=50?'◐ Partiellement':'○ Incomplet';
   return `
-    <div class="ritual-card" id="rc-${r.id}" onclick="toggleRitual('${r.id}')">
+    <div class="ritual-card" id="rc-${r.id}">
       <div class="ritual-header">
-        <div>
+        <div class="ritual-header-left" onclick="toggleRitual('${r.id}')">
           <div class="ritual-name">${r.name}</div>
           <div class="ritual-intent">${r.intent}</div>
         </div>
         <span class="${doableClass}" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.1em;white-space:nowrap;">${doableText}</span>
       </div>
       <div class="ritual-meta">
-        ${r.lune ? `<span class="meta-badge lune">${r.lune}</span>` : ''}
-        ${r.planete ? `<span class="meta-badge planete">${r.planete}</span>` : ''}
-        ${(r.tags||[]).map(t => `<span class="meta-badge">${t}</span>`).join('')}
+        ${r.lune?`<span class="meta-badge lune">${r.lune}</span>`:''}
+        ${r.planete?`<span class="meta-badge planete">${r.planete}</span>`:''}
+        ${(r.tags||[]).map(t=>`<span class="meta-badge">${t}</span>`).join('')}
       </div>
       <div class="ritual-ingredients">
         <h4>Ingrédients</h4>
         <div class="ingredient-list">
-          ${r.ingredients.map(ing => {
-            const found = inventory.some(item => item.name.toLowerCase().includes(ing.toLowerCase().split(' ')[0]));
-            return `<span class="ingredient-chip ${found ? '' : 'manquant'}">${ing}</span>`;
+          ${r.ingredients.map(ing=>{
+            const found=inventory.some(item=>item.name.toLowerCase().includes(ing.toLowerCase().split(' ')[0]));
+            return `<span class="ingredient-chip ${found?'':'manquant'}">${ing}</span>`;
           }).join('')}
         </div>
-        ${r.steps ? `<div style="margin-top:1rem;"><h4 style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;color:var(--fumee);text-transform:uppercase;margin-bottom:0.5rem;">Étapes</h4><p style="color:var(--parchemin-fonce);font-size:0.85rem;line-height:1.7;white-space:pre-line;">${r.steps}</p></div>` : ''}
+        ${r.steps?`<div style="margin-top:1rem;"><h4 style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;color:var(--fumee);text-transform:uppercase;margin-bottom:0.5rem;">Étapes</h4><p style="color:var(--parchemin-fonce);font-size:0.85rem;line-height:1.7;white-space:pre-line;">${r.steps}</p></div>`:''}
+        <div class="ritual-actions">
+          <button class="btn-action" onclick="editRitual('${r.id}')">Modifier</button>
+          <button class="btn-action danger" onclick="confirmDelete('ritual','${r.id}','${r.name.replace(/'/g,"\\'")}')">Supprimer</button>
+        </div>
       </div>
     </div>
   `;
 }
 
-function toggleRitual(id) {
-  const card = document.getElementById('rc-' + id);
-  card.classList.toggle('open');
-}
+function toggleRitual(id) { document.getElementById('rc-'+id).classList.toggle('open'); }
 
 function renderRituels() {
-  document.getElementById('rituals-list').innerHTML = rituals.map(r => ritualCardHTML(r)).join('');
+  document.getElementById('rituals-list').innerHTML = rituals.map(r=>ritualCardHTML(r)).join('');
 }
 
 // ============================================================
-// FORMULAIRES
+// MODIFIER RITUEL
+// ============================================================
+function editRitual(id) {
+  const r = rituals.find(r=>r.id===id);
+  if (!r) return;
+  editingRitualId = id;
+  document.getElementById('form-rit-title').textContent = 'Modifier le rituel';
+  document.getElementById('edit-rit-id').value = id;
+  document.getElementById('new-rit-name').value = r.name;
+  document.getElementById('new-rit-intent').value = r.intent||'';
+  document.getElementById('new-rit-lune').value = r.lune||'';
+  document.getElementById('new-rit-planete').value = r.planete||'';
+  document.getElementById('new-rit-ingredients').value = (r.ingredients||[]).join(', ');
+  document.getElementById('new-rit-steps').value = r.steps||'';
+  document.getElementById('btn-save-rit').textContent = 'Sauvegarder';
+  document.getElementById('btn-delete-rit').style.display = 'inline-block';
+  showPage('ajouter-rituel');
+  document.getElementById('page-ajouter-rituel').classList.add('active');
+}
+
+function resetRitualForm() {
+  editingRitualId = null;
+  document.getElementById('form-rit-title').textContent = 'Nouveau rituel';
+  document.getElementById('edit-rit-id').value = '';
+  document.getElementById('new-rit-name').value = '';
+  document.getElementById('new-rit-intent').value = '';
+  document.getElementById('new-rit-steps').value = '';
+  document.getElementById('new-rit-ingredients').value = '';
+  document.getElementById('btn-save-rit').textContent = 'Sceller le rituel';
+  document.getElementById('btn-delete-rit').style.display = 'none';
+}
+
+function saveRitual() {
+  const name = document.getElementById('new-rit-name').value.trim();
+  if (!name) { showToast('Le nom est requis'); return; }
+  const ingredients = document.getElementById('new-rit-ingredients').value.split(',').map(s=>s.trim()).filter(Boolean);
+  const data = {
+    name,
+    intent: document.getElementById('new-rit-intent').value,
+    lune: document.getElementById('new-rit-lune').value,
+    planete: document.getElementById('new-rit-planete').value,
+    ingredients,
+    steps: document.getElementById('new-rit-steps').value,
+    tags: [],
+  };
+  const editId = document.getElementById('edit-rit-id').value;
+  if (editId) {
+    const idx = rituals.findIndex(r=>r.id===editId);
+    if (idx>=0) { rituals[idx] = {...rituals[idx], ...data}; save(); showToast('✓ Rituel mis à jour'); showPage('rituels'); return; }
+  }
+  rituals.push({id:'r'+Date.now(), ...data});
+  save();
+  resetRitualForm();
+  showToast('✓ Rituel scellé dans le Grimoire');
+}
+
+// ============================================================
+// SUPPRESSION
+// ============================================================
+function confirmDelete(type, id, name) {
+  pendingDeleteType = type;
+  pendingDeleteId = id;
+  document.getElementById('confirm-title').textContent = 'Supprimer ?';
+  document.getElementById('confirm-msg').textContent = `"${name}" sera effacé définitivement du Grimoire.`;
+  document.getElementById('confirm-yes').onclick = executeDelete;
+  document.getElementById('confirm-overlay').classList.add('open');
+}
+
+function confirmDeleteItem() {
+  const id = document.getElementById('edit-item-id').value;
+  const item = inventory.find(i=>i.id===id);
+  if (item) confirmDelete('item', id, item.name);
+}
+
+function confirmDeleteRitual() {
+  const id = document.getElementById('edit-rit-id').value;
+  const r = rituals.find(r=>r.id===id);
+  if (r) confirmDelete('ritual', id, r.name);
+}
+
+function executeDelete() {
+  if (pendingDeleteType==='item') {
+    inventory = inventory.filter(i=>i.id!==pendingDeleteId);
+    save(); showToast('✓ Ingrédient supprimé'); showPage('inventaire');
+  } else if (pendingDeleteType==='ritual') {
+    rituals = rituals.filter(r=>r.id!==pendingDeleteId);
+    save(); showToast('✓ Rituel supprimé'); showPage('rituels');
+  }
+  closeConfirm();
+}
+
+function closeConfirm() {
+  document.getElementById('confirm-overlay').classList.remove('open');
+  pendingDeleteId = null;
+  pendingDeleteType = null;
+}
+
+// ============================================================
+// TAGS
 // ============================================================
 function addTag(e) {
-  if (e.key !== 'Enter') return;
+  if (e.key!=='Enter') return;
   const input = document.getElementById('new-tag-input');
   const val = input.value.trim();
   if (!val) return;
@@ -1361,63 +911,14 @@ function addTag(e) {
 }
 
 function removeTag(i) {
-  currentTags.splice(i, 1);
+  currentTags.splice(i,1);
   renderCurrentTags();
 }
 
 function renderCurrentTags() {
-  document.getElementById('new-tags').innerHTML = currentTags.map((t,i) => 
+  document.getElementById('new-tags').innerHTML = currentTags.map((t,i)=>
     `<div class="tag-input-item">${t} <button class="tag-remove" onclick="removeTag(${i})">✕</button></div>`
   ).join('');
-}
-
-function saveNewItem() {
-  const name = document.getElementById('new-name').value.trim();
-  if (!name) { showToast('Le nom est requis'); return; }
-  const item = {
-    id: 'p' + Date.now(),
-    emoji: document.getElementById('new-emoji').value || '◈',
-    name,
-    category: document.getElementById('new-category').value,
-    qty: document.getElementById('new-qty').value || 'En stock',
-    tags: [...currentTags],
-    correspondances: document.getElementById('new-correspondances').value,
-    notes: document.getElementById('new-notes').value,
-  };
-  inventory.push(item);
-  save();
-  currentTags = [];
-  renderCurrentTags();
-  document.getElementById('new-name').value = '';
-  document.getElementById('new-emoji').value = '';
-  document.getElementById('new-qty').value = '';
-  document.getElementById('new-notes').value = '';
-  document.getElementById('new-correspondances').value = '';
-  showToast('✓ Inscrit dans le Grimoire');
-}
-
-function saveNewRitual() {
-  const name = document.getElementById('new-rit-name').value.trim();
-  if (!name) { showToast('Le nom est requis'); return; }
-  const ingredients = document.getElementById('new-rit-ingredients').value
-    .split(',').map(s => s.trim()).filter(Boolean);
-  const ritual = {
-    id: 'r' + Date.now(),
-    name,
-    intent: document.getElementById('new-rit-intent').value,
-    lune: document.getElementById('new-rit-lune').value,
-    planete: document.getElementById('new-rit-planete').value,
-    ingredients,
-    steps: document.getElementById('new-rit-steps').value,
-    tags: [],
-  };
-  rituals.push(ritual);
-  save();
-  document.getElementById('new-rit-name').value = '';
-  document.getElementById('new-rit-intent').value = '';
-  document.getElementById('new-rit-steps').value = '';
-  document.getElementById('new-rit-ingredients').value = '';
-  showToast('✓ Rituel scellé dans le Grimoire');
 }
 
 // ============================================================
@@ -1427,12 +928,129 @@ function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+  setTimeout(()=>t.classList.remove('show'), 2500);
 }
 
 // ============================================================
-// INIT
+// BAIN VAGINAL
 // ============================================================
+const HERBES_BAIN = ['Lavande vraie','Roses séchées','Camomille','Romarin','Menthe poivrée','Basilic','Hibiscus','Hysope','Angélique','Zeste de citron','Sauge blanche'];
+
+function initBainVaginal() {
+  const now = new Date();
+  const lunar = getLunarPhase(now);
+  const planet = PLANETARY_DAYS[now.getDay()];
+  const sign = getCurrentSign(now);
+  document.getElementById('bv-cosmic-ctx').innerHTML = `
+    <h3 style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.25em;color:var(--fumee);text-transform:uppercase;margin-bottom:1rem;">Contexte cosmique</h3>
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+      <div class="cosmic-item"><span class="cosmic-label">Lune</span><span class="cosmic-value" style="margin-left:0.5rem;">${lunar.phase.symbol} ${lunar.phase.name} — ${lunar.phase.energy}</span></div>
+    </div>
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-top:0.5rem;">
+      <div class="cosmic-item"><span class="cosmic-label">Jour</span><span class="cosmic-value" style="margin-left:0.5rem;">${planet.symbol} ${planet.planet} — ${planet.energy}</span></div>
+    </div>
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-top:0.5rem;">
+      <div class="cosmic-item"><span class="cosmic-label">Signe</span><span class="cosmic-value" style="margin-left:0.5rem;">${sign.symbol} ${sign.name} · Élément ${sign.element}</span></div>
+    </div>
+  `;
+}
+
+async function genererBainVaginal() {
+  const besoin = document.getElementById('bv-besoin').value.trim();
+  const intention = document.getElementById('bv-intention').value;
+  if (!besoin) { showToast('Décris ce que tu ressens aujourd\'hui'); return; }
+
+  const now = new Date();
+  const lunar = getLunarPhase(now);
+  const planet = PLANETARY_DAYS[now.getDay()];
+  const sign = getCurrentSign(now);
+
+  const herbesDisponibles = inventory
+    .filter(i => i.category === 'plante' && HERBES_BAIN.some(h => i.name.toLowerCase().includes(h.toLowerCase().split(' ')[0])))
+    .map(i => i.name);
+
+  const intentionLabels = {
+    purification:'Purification & libération',reconnexion:'Reconnexion à la féminité',
+    amour:'Amour & self-love',fertilite:'Fertilité & cycles',
+    guerison:'Guérison & douceur',pouvoir:'Pouvoir & magnétisme',
+    intuition:'Intuition & vision',ancrage:'Ancrage & stabilité'
+  };
+
+  const loadingMessages = [
+    'Le grimoire consulte les astres...',
+    'Les plantes s\'éveillent...',
+    'La recette se tisse...',
+  ];
+  let lIdx = 0;
+  document.getElementById('bv-result').style.display = 'none';
+  document.getElementById('bv-loading').style.display = 'block';
+  document.getElementById('bv-btn').disabled = true;
+  const loadingInterval = setInterval(() => {
+    lIdx = (lIdx+1) % loadingMessages.length;
+    document.getElementById('bv-loading-text').textContent = loadingMessages[lIdx];
+  }, 2000);
+
+  const prompt = `Tu es l'oracle du Grimoire Vivant de Nyxa Vanta, une praticienne de rituels vibratoires et d'alchimie féminine.
+
+Crée une recette de bain vaginal (yoni steam) personnalisée et sacrée pour ce moment précis.
+
+CONTEXTE COSMIQUE :
+- Phase lunaire : ${lunar.phase.name} — énergie : ${lunar.phase.energy}
+- Jour planétaire : ${planet.planet} — énergie : ${planet.energy}
+- Signe actuel : ${sign.name}, élément ${sign.element}
+
+ÉTAT DU JOUR :
+${besoin}
+
+INTENTION PRINCIPALE : ${intentionLabels[intention]}
+
+HERBES DISPONIBLES DANS SON INVENTAIRE :
+${herbesDisponibles.length > 0 ? herbesDisponibles.join(', ') : 'Lavande, Roses séchées, Camomille, Romarin (à adapter selon disponibilité)'}
+
+INSTRUCTIONS :
+1. Sélectionne 2 à 4 herbes parmi les disponibles, justifie chaque choix en lien avec le timing cosmique et l'état du jour
+2. Donne les proportions approximatives (poignée, cuillère, etc.)
+3. Explique le protocole du bain (préparation, durée, posture, intention)
+4. Ajoute une intention ou affirmation à prononcer pendant le bain
+5. Note une ou deux contre-indications importantes si pertinent
+
+Ton style : poétique, incarné, féminin, direct. Pas de jargon médical. Parle à la première personne du singulier comme si tu t'adressais à elle directement. Utilise "tu". Sois concise mais profonde. Sépare les sections avec des titres courts en petites lettres.`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await response.json();
+    const text = data.content?.map(b => b.text||'').join('') || 'Impossible de générer la recette.';
+    
+    clearInterval(loadingInterval);
+    document.getElementById('bv-loading').style.display = 'none';
+    document.getElementById('bv-btn').disabled = false;
+    
+    const formatted = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--or);font-family:\'Cinzel\',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-style:normal;">$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n\n/g, '</p><p style="margin-top:1rem;">')
+      .replace(/\n/g, '<br>');
+    
+    document.getElementById('bv-content').innerHTML = `<p>${formatted}</p>`;
+    document.getElementById('bv-result').style.display = 'block';
+    document.getElementById('bv-result').scrollIntoView({behavior:'smooth', block:'start'});
+  } catch(e) {
+    clearInterval(loadingInterval);
+    document.getElementById('bv-loading').style.display = 'none';
+    document.getElementById('bv-btn').disabled = false;
+    showToast('Erreur de connexion à l\'oracle');
+  }
+}
+
+
 renderCosmic();
 renderInventaire();
 </script>
